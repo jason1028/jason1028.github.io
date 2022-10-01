@@ -16,7 +16,7 @@
 <meta property="og:description" content="最近使用了Uber的SS.gl框架，由于文档对使用的数据结构以及了解它的渲染原理，打算将ss开源代码集成至自己的工程当中。主要是2个原因：1、通过代码反推数据协议；  2、分析原理完成opendrive高精地图融合；    问题描述由于引入的源码工程中，对package有自身的私有依赖，产生自己的node_modules以及不需要用到的模块并不需要放入工程中，所以想通过.gitignore对该工">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-09-26T05:12:46.000Z">
-<meta property="article:modified_time" content="2022-10-01T04:21:39.697Z">
+<meta property="article:modified_time" content="2022-10-01T04:23:43.320Z">
 <meta property="article:author" content="json">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="工具">
@@ -200,7 +200,7 @@
 
 <h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><ul>
 <li>之前avs/node_modules文件夹已经集成在了.git版本中；</li>
-<li>缓存的优先级高于直接修改.gitignore直接修改，这才导致直接修改.gitignore无效；</li>
+<li>缓存的优先级高于直接修改.gitignore，这才导致直接修改.gitignore无效；</li>
 </ul>
 <br/>
 
