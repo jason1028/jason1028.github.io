@@ -192,6 +192,8 @@
 <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>由于引入的源码工程中，对package有自身的私有依赖，产生自己的node_modules以及不需要用到的模块并不需要放入工程中，所以想通过.gitignore对该工程中子目录做一个忽略。本以为在.gitignore直接加入对应的文件夹即可，但无论如何修改.gitignore(<span style="color: red;"><strong>/modules/avs/node_modules</strong></span>)始终无法生效；</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 忽略当前node_modules</span><br><span class="line">/node_modules/</span><br><span class="line"></span><br><span class="line"># 忽略modules/avs/node_modules</span><br><span class="line">/modules/avs/node_modules</span><br></pre></td></tr></table></figure>
 
+<br/>
+
 <h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><ul>
 <li>之前avs/node_modules文件夹已经集成在了.git版本中；</li>
 <li>缓存的优先级高于直接修改.gitignore直接修改，这才导致直接修改.gitignore无效；</li>
