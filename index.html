@@ -170,6 +170,115 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nginx/Nginx工作模型与常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Nginx工作模型与常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2022/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2022-10-13T23:14:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="工作模型与目前分层架构"><a href="#工作模型与目前分层架构" class="headerlink" title="工作模型与目前分层架构"></a>工作模型与目前分层架构</h3><img src="/images/nginx/nginx-02/01.png" width="800"/>
+
+<ol>
+<li>Master主进程收集所有客户端请求；</li>
+<li>负载均衡, 如LVS分析各个work子进程的工作情况，做出决策；</li>
+<li>Work子进程处理具体的请求调用与转化；</li>
+<li>调用Node服务中间层；</li>
+<li>服务端调用；</li>
+</ol>
+<h3 id="Nginx常用命令"><a href="#Nginx常用命令" class="headerlink" title="Nginx常用命令"></a>Nginx常用命令</h3><ul>
+<li><p>查看80端口nginx服务：<strong>netstat -tupln | grep 80</strong></p>
+<img src="/images/nginx/nginx-02/02.png" width="800"/></li>
+<li><p>停止Nginx服务：<strong>nginx -s stop</strong></p>
+</li>
+<li><p>启动Nginx服务：<strong>nginx</strong></p>
+</li>
+<li><p>重启Nginx服务(一般用户nginx.conf改变后重启)：<strong>nginx -s reload</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意点</span></span><br><span class="line"><span class="comment">// 更多是优雅重启，它重启过程中并不会停止之前的Work子进程，而是会新建一个Work子进程，原来Work子进程处理完毕后再kill。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>放弃Nginx服务：<strong>nginx -s quit</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意点</span></span><br><span class="line"><span class="comment">// 优雅停止，如果有在处理过程中请求，将处理完毕后再停止，nginx -s stop为暴力停止。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>查看Nginx配置路径：<strong>nginx -V</strong></p>
+<img src="/images/nginx/nginx-02/03.png" width="800"/></li>
+<li><p>日志文件生效：<strong>nginx -s reopen</strong></p>
+<img src="/images/nginx/nginx-02/04.png" width="800"/>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 1、nginx初始化时默认记录的是access.log的文件地址，就算你将access.log重命名了，然后new一个access.log，nginx并不会将日志打入新的access.log中</span></span><br><span class="line"><span class="comment">* 2、如何让新的access.log生效呢，nginx -s reopen这条命令就可以做到这个事情；</span></span><br><span class="line"><span class="comment">**/</span></span><br></pre></td></tr></table></figure></li>
+<li><p>查看帮助: <strong>nginx -h</strong></p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Http服务</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-git/关于.gitignore无效的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -289,43 +398,43 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>最近针对后台运营端开发，各个模块相似度较高的特性以及开发过程中冗余代码多、漏删、误删等情况问题的显现，做出来一套类似脚手架的模块化成产工具，基于B/S架构，在浏览器端输入对应的路径与参数，再结合已有template模版，针对search、table、detail自动化生成的一套工具。针对B/S架构的问题，从拉取代码到运行到配置过程相对较繁琐。考虑用脚手架命令来完成模块的生产；<br><img src="../images/node_cli/01.png"/>  </p>
+<p>最近针对后台运营端开发，各个模块相似度较高的特性以及开发过程中冗余代码多、漏删、误删等情况问题的显现，做出来一套类似脚手架的模块化成产工具，基于B/S架构，在浏览器端输入对应的路径与参数，再结合已有template模版，针对search、table、detail自动化生成的一套工具。针对B/S架构的问题，从拉取代码到运行到配置过程相对较繁琐。考虑用脚手架命令来完成模块的生产；<br><img src="/images/node_cli/01.png"/>  </p>
 </blockquote>
 <h3 id="什么是脚手架？"><a href="#什么是脚手架？" class="headerlink" title="什么是脚手架？"></a>什么是脚手架？</h3><p>简单理解就是：<strong>可通过全局命令实现文件以及文件夹生成的一款工具。</strong></p>
 <h3 id="它包含了什么样的能力，-如何去实现？"><a href="#它包含了什么样的能力，-如何去实现？" class="headerlink" title="它包含了什么样的能力， 如何去实现？"></a>它包含了什么样的能力， 如何去实现？</h3><ul>
 <li><p><strong>全局命令执行的能力；</strong></p>
 <ul>
-<li>初始化工程代码，设置package.json以及bin目录入口文件；<br/><img src="../images/node_cli/02.png" width="800"/></li>
-<li>通过npm link生成全局命令；<br>入口文件./bin/cli.js 加入：#! /usr/bin/env node（重点，表示从系统node启动该文件）mycli 就是开始执行./bin/cli.js<br><img src="../images/node_cli/03.png" width="800"/><br/><br>在当前工程目录下，执行npm link，创建全局命令mycli。<br/><img src="../images/node_cli/04.png" width="800"/></li>
+<li>初始化工程代码，设置package.json以及bin目录入口文件；<br/><img src="/images/node_cli/02.png" width="800"/></li>
+<li>通过npm link生成全局命令；<br>入口文件./bin/cli.js 加入：#! /usr/bin/env node（重点，表示从系统node启动该文件）mycli 就是开始执行./bin/cli.js<br><img src="/images/node_cli/03.png" width="800"/><br/><br>在当前工程目录下，执行npm link，创建全局命令mycli。<br/><img src="/images/node_cli/04.png" width="800"/></li>
 </ul>
 </li>
 <li><p><strong>用户帮助–help、人机交互的能力（使用：commander包【处理命令相关】，inquirer包【负责人机交互】）；</strong></p>
 <ul>
-<li>初始化–help；<br/><img src="../images/node_cli/05.png" width="800"/>
-<img src="../images/node_cli/06.png" width="800"/></li>
-<li>创建工程命令生成；<br/><img src="../images/node_cli/07.png" width="800"/>
-<img src="../images/node_cli/08.png" width="800"/></li>
-<li>人机交互，要用户自己选择对应的模版；<br/><img src="../images/node_cli/09.png" width="800"/>
-<img src="../images/node_cli/10.png" width="800"/>
-<img src="../images/node_cli/11.png" width="800"/></li>
+<li>初始化–help；<br/><img src="/images/node_cli/05.png" width="800"/>
+<img src="/images/node_cli/06.png" width="800"/></li>
+<li>创建工程命令生成；<br/><img src="/images/node_cli/07.png" width="800"/>
+<img src="/images/node_cli/08.png" width="800"/></li>
+<li>人机交互，要用户自己选择对应的模版；<br/><img src="/images/node_cli/09.png" width="800"/>
+<img src="/images/node_cli/10.png" width="800"/>
+<img src="/images/node_cli/11.png" width="800"/></li>
 </ul>
 </li>
 <li><p><strong>代码下载能力（根据第二步人机交互后得到用户的选择参数后，开始通过download-git-repo包对代码进行远程下载）；</strong></p>
 <ul>
-<li>获取参数后，开始下载代码至本地；<br/><img src="../images/node_cli/12.png" width="800"/></li>
+<li>获取参数后，开始下载代码至本地；<br/><img src="/images/node_cli/12.png" width="800"/></li>
 </ul>
 </li>
 <li><p><strong>过程提示（逻辑处理中，给用户清晰的展示过程，包含成功和失败提示等，使用ora包）；</strong></p>
 <ul>
-<li>当代码下载过程中，需要给用户提示，这里使用ora包即可做到；<br/><br><img src="../images/node_cli/13.png" width="800"/><br/></li>
+<li>当代码下载过程中，需要给用户提示，这里使用ora包即可做到；<br/><br><img src="/images/node_cli/13.png" width="800"/><br/></li>
 <li>注意点：<em>你在nodejs使用CMJ规范引入 ora 时，请使用6.0.0以下版本，以上只支持ESM规范了。</em></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li><strong>界面样式处理（针对不同的文字、对颜色、粗细控制等，这里使用chalk包即可）</strong><ul>
-<li>对于页面显示的内容，如何给用户提供更美观的样式，可使用chalk包对文字颜色、是否加粗、斜体等做操作；<br/><img src="../images/node_cli/14.png" width="800"/></li>
-<li>结果展示<br/><img src="../images/node_cli/15.png" width="800"/></li>
+<li>对于页面显示的内容，如何给用户提供更美观的样式，可使用chalk包对文字颜色、是否加粗、斜体等做操作；<br/><img src="/images/node_cli/14.png" width="800"/></li>
+<li>结果展示<br/><img src="/images/node_cli/15.png" width="800"/></li>
 </ul>
 </li>
 </ul>
@@ -420,7 +529,7 @@
 <h3 id="Nginx了解"><a href="#Nginx了解" class="headerlink" title="Nginx了解"></a>Nginx了解</h3><blockquote>
 <p>Nginx作为当前最流行以及最受欢迎的Http服务器，市场份额已占比全球第一。同时内存占用少，启动极快，高并发能力强的特点，Nginx基于Master主进程，worker子进程相互协助的工作模型，目前在互联网项目中得到广泛使用；</p>
 </blockquote>
-<img src="../images/nginx/nginx-01/01.png" width="800"/>
+<img src="/images/nginx/nginx-01/01.png" width="800"/>
 
 <h3 id="Nginx正向代理与反向代理"><a href="#Nginx正向代理与反向代理" class="headerlink" title="Nginx正向代理与反向代理"></a>Nginx正向代理与反向代理</h3><ul>
 <li>正向代理：代理的是客户端，如果翻墙VPN；</li>
@@ -505,115 +614,6 @@
 
 
   
-    <article id="post-nginx/Nginx工作模型与常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Nginx工作模型与常用命令</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2022-09-13T23:14:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="工作模型与目前分层架构"><a href="#工作模型与目前分层架构" class="headerlink" title="工作模型与目前分层架构"></a>工作模型与目前分层架构</h3><img src="../images/nginx/nginx-02/01.png" width="800"/>
-
-<ol>
-<li>Master主进程收集所有客户端请求；</li>
-<li>负载均衡, 如LVS分析各个work子进程的工作情况，做出决策；</li>
-<li>Work子进程处理具体的请求调用与转化；</li>
-<li>调用Node服务中间层；</li>
-<li>服务端调用；</li>
-</ol>
-<h3 id="Nginx常用命令"><a href="#Nginx常用命令" class="headerlink" title="Nginx常用命令"></a>Nginx常用命令</h3><ul>
-<li><p>查看80端口nginx服务：<strong>netstat -tupln | grep 80</strong></p>
-<img src="../images/nginx/nginx-02/02.png" width="800"/></li>
-<li><p>停止Nginx服务：<strong>nginx -s stop</strong></p>
-</li>
-<li><p>启动Nginx服务：<strong>nginx</strong></p>
-</li>
-<li><p>重启Nginx服务(一般用户nginx.conf改变后重启)：<strong>nginx -s reload</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意点</span></span><br><span class="line"><span class="comment">// 更多是优雅重启，它重启过程中并不会停止之前的Work子进程，而是会新建一个Work子进程，原来Work子进程处理完毕后再kill。</span></span><br></pre></td></tr></table></figure></li>
-<li><p>放弃Nginx服务：<strong>nginx -s quit</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意点</span></span><br><span class="line"><span class="comment">// 优雅停止，如果有在处理过程中请求，将处理完毕后再停止，nginx -s stop为暴力停止。</span></span><br></pre></td></tr></table></figure></li>
-<li><p>查看Nginx配置路径：<strong>nginx -V</strong></p>
-<img src="../images/nginx/nginx-02/03.png" width="800"/></li>
-<li><p>日志文件生效：<strong>nginx -s reopen</strong></p>
-<img src="../images/nginx/nginx-02/04.png" width="800"/>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 1、nginx初始化时默认记录的是access.log的文件地址，就算你将access.log重命名了，然后new一个access.log，nginx并不会将日志打入新的access.log中</span></span><br><span class="line"><span class="comment">* 2、如何让新的access.log生效呢，nginx -s reopen这条命令就可以做到这个事情；</span></span><br><span class="line"><span class="comment">**/</span></span><br></pre></td></tr></table></figure></li>
-<li><p>查看帮助: <strong>nginx -h</strong></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Http服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -637,10 +637,10 @@
         <br/>
 
 <h2 id="聊聊最近"><a href="#聊聊最近" class="headerlink" title="聊聊最近"></a>聊聊最近</h2><p>时光荏苒、弹指一挥间。不知不觉已加入我厂已整整4年之久，偶然间翻到之前的个人博客（<a target="_blank" rel="noopener" href="https://lynn1824.github.io)/">https://lynn1824.github.io）</a> 时间定格在了2018，虽然在厂内KM上也发布了一些自己的总结与文章，但回头去想想自己的初心与定下的目标，深感惭愧。并没有很好的坚持下来，似乎需要给自己说点什么，思考点什么。看着最后一篇文章的2018-06-02，似乎我觉得自己需要做点什么了。<br><br/></p>
-<h2 id="时光不语，但它会给你所有的答案。"><a href="#时光不语，但它会给你所有的答案。" class="headerlink" title="时光不语，但它会给你所有的答案。"></a>时光不语，但它会给你所有的答案。</h2><img src="../images/good-time.jpg" width="700"/>  
+<h2 id="时光不语，但它会给你所有的答案。"><a href="#时光不语，但它会给你所有的答案。" class="headerlink" title="时光不语，但它会给你所有的答案。"></a>时光不语，但它会给你所有的答案。</h2><img src="/images/good-time.jpg" width="700"/>  
 
 <p>最近公司组织架构与业务做了一些较大的调整，新的leader问了一个问题，引发了自己的一些总结与思考。<br>leader：之前你对前端稳定性这一块做了一些什么事情？怎么做的？<br>me：嗯….，首先，需要在代码上做些兜底的兼容方案，防止页面因某个问题而奔溃。其次，需要注重前端的用户体验，不能造成过多的卡顿、提升一些前端的性能….<br>夜深人静时，回想起了这个问题，往深里思考：看似如此，但间接也反应了目前阶段自己的定位与价值产出的一个体现；<br>问自己：<br>    1、你有没有从开发流程上去思考过这个问题？<br>    2、你有没有从前端工程化上去考虑过这个问题？<br>    3、你有没有从业务的角度去考虑过这个问题？<br>    4、你有没有从上下游团队的角度去考虑过这个问题？<br>    5、你有没有从工程代码可规范性、可维护性、可扩展性去思考过这个问题？<br>仔细想想：<br>    都有思考过。<br>问自己：<br>    那你为何碰到这种问题时，为何卡顿无措，不知如何回答？甚至压根没有弄明白背后问该问题的真正目的？<br>仔细想想：<br>    每个人随着阅历与认知的提升，你需要对每个不同阶段对自己又有新的定位与认识。你现在并非一个业务开发，而是一个需要站在能产生更大价值的角度去思考，更大范围的去思考来解决目前的问题；<br>偶然间在网络上看到这样一句话：时光不语，却给出了所有答案。<br>是啊，时间是时间上最公平的东西。每人每天都是24小时，不多不少。但你要如何利用他，如何在共同的24小时里产生更大的能量值得好好去思考。它是公平的，也是自由的。在固定的时光里，有人在懒惰、有人在奋斗、有人在熬夜伤身喝酒抽烟、也有人在时刻关心健康、有人在放纵放任自己、也有人在不断突破完善自己、有人在违法犯罪、有人却在但行好事。<br>它从来不语，也会给你足够的自由。<br>但同时，它也会给你最真实、最公平的答案。<br>或个人，<br>或群体。<br><br/></p>
-<h3 id="不负时光，努力前行。"><a href="#不负时光，努力前行。" class="headerlink" title="不负时光，努力前行。"></a>不负时光，努力前行。</h3><p><img src="../images/go.webp" alt="时光不语，但它会给你所有答案"><br>在我们有限的生命里，我们需要不负时光。<br>不忘你的初心。<br>同时保持你的正直与善良。<br>积极向上、不断提升完善自己。<br>它终将给你一个最完美的答案，共勉。</p>
+<h3 id="不负时光，努力前行。"><a href="#不负时光，努力前行。" class="headerlink" title="不负时光，努力前行。"></a>不负时光，努力前行。</h3><p><img src="/images/go.webp" alt="时光不语，但它会给你所有答案"><br>在我们有限的生命里，我们需要不负时光。<br>不忘你的初心。<br>同时保持你的正直与善良。<br>积极向上、不断提升完善自己。<br>它终将给你一个最完美的答案，共勉。</p>
 
       
 
