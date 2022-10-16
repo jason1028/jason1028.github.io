@@ -217,6 +217,8 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 1、nginx初始化时默认记录的是access.log的文件地址，就算你将access.log重命名了，然后new一个access.log，nginx并不会将日志打入新的access.log中</span></span><br><span class="line"><span class="comment">* 2、如何让新的access.log生效呢，nginx -s reopen这条命令就可以做到这个事情；</span></span><br><span class="line"><span class="comment">**/</span></span><br></pre></td></tr></table></figure></li>
 <li><p>查看帮助: <strong>nginx -h</strong></p>
 </li>
+<li><p>检查nginx.conf是否正确：<strong>nginx -t</strong></p>
+<img src="/images/nginx/nginx-02/05.png" width="800"/></li>
 </ul>
 
       
