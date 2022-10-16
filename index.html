@@ -190,9 +190,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="工作模型与目前分层架构"><a href="#工作模型与目前分层架构" class="headerlink" title="工作模型与目前分层架构"></a>工作模型与目前分层架构</h3><img src="../images/nginx/nginx_02/01.png" width="800"/>
-1. Master主进程收集所有客户端请求；
-2. 负载均衡
+        <h3 id="工作模型与目前分层架构"><a href="#工作模型与目前分层架构" class="headerlink" title="工作模型与目前分层架构"></a>工作模型与目前分层架构</h3><img src="../images/nginx/nginx-02/01.png" width="800"/>
+
+<ol>
+<li>Master主进程收集所有客户端请求；</li>
+<li>负载均衡, 如LVS分析各个work子进程的工作情况，做出决策；</li>
+<li>Work子进程处理具体的请求调用与转化；</li>
+<li>调用Node服务中间层；</li>
+<li>服务端调用；</li>
+</ol>
+<h3 id="Nginx常用命令"><a href="#Nginx常用命令" class="headerlink" title="Nginx常用命令"></a>Nginx常用命令</h3><ul>
+<li><p>查看80端口nginx服务：<strong>netstat -tupln | grep 80</strong></p>
+<img src="../images/nginx/nginx-02/02.png" width="800"/></li>
+<li><p>停止Nginx服务：<strong>nginx -s stop</strong></p>
+</li>
+<li><p>启动Nginx服务：<strong>nginx</strong></p>
+</li>
+<li><p>重启Nginx服务(一般用户nginx.conf改变后重启)：<strong>nginx -s reload</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意点</span></span><br><span class="line"><span class="comment">// 更多是优雅重启，它重启过程中并不会停止之前的Work子进程，而是会新建一个Work子进程，原来Work子进程处理完毕后再kill。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>放弃Nginx服务：<strong>nginx -s quit</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意点</span></span><br><span class="line"><span class="comment">// 优雅停止，如果有在处理过程中请求，将处理完毕后再停止，nginx -s stop为暴力停止。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>查看Nginx配置路径：<strong>nginx -V</strong></p>
+<img src="../images/nginx/nginx-02/03.png" width="800"/></li>
+<li><p>日志文件生效：<strong>nginx -s reopen</strong></p>
+<img src="../images/nginx/nginx-02/04.png" width="800"/>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 1、nginx初始化时默认记录的是access.log的文件地址，就算你将access.log重命名了，然后new一个access.log，nginx并不会将日志打入新的access.log中</span></span><br><span class="line"><span class="comment">* 2、如何让新的access.log生效呢，nginx -s reopen这条命令就可以做到这个事情；</span></span><br><span class="line"><span class="comment">**/</span></span><br></pre></td></tr></table></figure></li>
+<li><p>查看帮助: <strong>nginx -h</strong></p>
+</li>
+</ul>
 
       
 
