@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Node脚手架npm发布 | Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="之前通过node完成了一个简单的脚手架，但只是通过npm link在本地开启了一个全局软链接，但要想在其它地方使用该脚手架，就必须发布到npm平台，通过npm i来安装。以此来记录一下它的发布流程。  它的流程是什么？ 有哪些注意点？ 第一步：你需要一个npm账号；  在npm官网注册自己的账号； 在npm包查询中，查询自己脚手架包名称，防止重复, 如果包重复，npm将会阻止上传；   第二步：">
+  <meta name="description" content="这是显示在首页的概述，正文内容均会被隐藏。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node脚手架npm发布">
 <meta property="og:url" content="http://example.com/2022/10/17/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
-<meta property="og:description" content="之前通过node完成了一个简单的脚手架，但只是通过npm link在本地开启了一个全局软链接，但要想在其它地方使用该脚手架，就必须发布到npm平台，通过npm i来安装。以此来记录一下它的发布流程。  它的流程是什么？ 有哪些注意点？ 第一步：你需要一个npm账号；  在npm官网注册自己的账号； 在npm包查询中，查询自己脚手架包名称，防止重复, 如果包重复，npm将会阻止上传；   第二步：">
+<meta property="og:description" content="这是显示在首页的概述，正文内容均会被隐藏。">
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/images/nodejs/02/01.png">
 <meta property="og:image" content="http://example.com/images/nodejs/02/02.png">
@@ -25,8 +25,8 @@
 <meta property="og:image" content="http://example.com/images/nodejs/02/08.png">
 <meta property="og:image" content="http://example.com/images/nodejs/02/09.png">
 <meta property="article:published_time" content="2022-10-17T13:30:11.000Z">
-<meta property="article:modified_time" content="2022-10-17T17:02:15.108Z">
-<meta property="article:author" content="json">
+<meta property="article:modified_time" content="2022-12-20T14:00:20.269Z">
+<meta property="article:author" content="jason">
 <meta property="article:tag" content="NodeJS">
 <meta property="article:tag" content="脚手架">
 <meta property="article:tag" content="npm">
@@ -81,6 +81,8 @@
 				<li><a href="/tags/git/">Git</a></li>
 	        
 				<li><a href="/tags/Study/">学习小记</a></li>
+	        
+				<li><a href="/tags/Arithmetic">算法练习</a></li>
 	        
 			</ul>
 		</nav>
@@ -146,6 +148,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -166,17 +170,19 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
+					<li style="width: 14.285714285714286%"><a href="/">主页</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/Study/">学习小记</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/Study/">学习小记</a></li>
+		        
+					<li style="width: 14.285714285714286%"><a href="/tags/Arithmetic">算法练习</a></li>
 		        
 				</ul>
 			</nav>
@@ -214,6 +220,8 @@
         <blockquote>
 <p>之前通过node完成了一个简单的脚手架，但只是通过npm link在本地开启了一个全局软链接，但要想在其它地方使用该脚手架，就必须发布到npm平台，通过npm i来安装。以此来记录一下它的发布流程。</p>
 </blockquote>
+<span id="more"></span>
+
 <h3 id="它的流程是什么？-有哪些注意点？"><a href="#它的流程是什么？-有哪些注意点？" class="headerlink" title="它的流程是什么？ 有哪些注意点？"></a>它的流程是什么？ 有哪些注意点？</h3><ul>
 <li><p><strong>第一步：你需要一个npm账号；</strong></p>
 <ul>
@@ -417,7 +425,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 json
+    		&copy; 2022 jason
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -545,6 +553,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Arithmetic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Study</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>.gitignore忽略无效的问题记录 | Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近使用了Uber的SS.gl框架，由于文档对使用的数据结构以及了解它的渲染原理，打算将ss开源代码集成至自己的工程当中。主要是2个原因：1、通过代码反推数据协议；  2、分析原理完成opendrive高精地图融合；    问题描述由于引入的源码工程中，对package有自身的私有依赖，产生自己的node_modules以及不需要用到的模块并不需要放入工程中，所以想通过.gitignore对该工">
+  <meta name="description" content="最近使用了Uber的SS.gl框架，由于文档对使用的数据结构以及了解它的渲染原理，打算将ss开源代码集成至自己的工程当中。主要是2个原因：1、通过代码反推数据协议；  2、分析原理完成opendrive高精地图融合；">
 <meta property="og:type" content="article">
 <meta property="og:title" content=".gitignore忽略无效的问题记录">
 <meta property="og:url" content="http://example.com/2022/09/26/git/%E5%85%B3%E4%BA%8E.gitignore%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
-<meta property="og:description" content="最近使用了Uber的SS.gl框架，由于文档对使用的数据结构以及了解它的渲染原理，打算将ss开源代码集成至自己的工程当中。主要是2个原因：1、通过代码反推数据协议；  2、分析原理完成opendrive高精地图融合；    问题描述由于引入的源码工程中，对package有自身的私有依赖，产生自己的node_modules以及不需要用到的模块并不需要放入工程中，所以想通过.gitignore对该工">
+<meta property="og:description" content="最近使用了Uber的SS.gl框架，由于文档对使用的数据结构以及了解它的渲染原理，打算将ss开源代码集成至自己的工程当中。主要是2个原因：1、通过代码反推数据协议；  2、分析原理完成opendrive高精地图融合；">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-09-26T05:12:46.000Z">
-<meta property="article:modified_time" content="2022-10-15T17:15:55.052Z">
-<meta property="article:author" content="json">
+<meta property="article:modified_time" content="2022-12-20T13:58:44.947Z">
+<meta property="article:author" content="jason">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary">
@@ -70,6 +70,8 @@
 				<li><a href="/tags/git/">Git</a></li>
 	        
 				<li><a href="/tags/Study/">学习小记</a></li>
+	        
+				<li><a href="/tags/Arithmetic">算法练习</a></li>
 	        
 			</ul>
 		</nav>
@@ -135,6 +137,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -155,17 +159,19 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
+					<li style="width: 14.285714285714286%"><a href="/">主页</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/Study/">学习小记</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/Study/">学习小记</a></li>
+		        
+					<li style="width: 14.285714285714286%"><a href="/tags/Arithmetic">算法练习</a></li>
 		        
 				</ul>
 			</nav>
@@ -203,6 +209,8 @@
         <blockquote>
 <p>最近使用了Uber的SS.gl框架，由于文档对使用的数据结构以及了解它的渲染原理，打算将ss开源代码集成至自己的工程当中。<br/>主要是2个原因：<br/><strong>1、通过代码反推数据协议；</strong> <br/> <strong>2、分析原理完成opendrive高精地图融合；</strong></p>
 </blockquote>
+<span id="more"></span>
+
 <br/>
 
 <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>由于引入的源码工程中，对package有自身的私有依赖，产生自己的node_modules以及不需要用到的模块并不需要放入工程中，所以想通过.gitignore对该工程中子目录做一个忽略。本以为在.gitignore直接加入对应的文件夹即可，但无论如何修改.gitignore(<span style="color: red;"><strong>/modules/avs/node_modules</strong></span>)始终无法生效；</p>
@@ -396,7 +404,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 json
+    		&copy; 2022 jason
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -524,6 +532,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Arithmetic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Study</a>
               </li>
             
             <div class="clearfix"></div>

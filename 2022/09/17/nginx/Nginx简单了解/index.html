@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Nginx简单了解 | Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。  思考: 当前Node的BFF层它的核心价值是什么？  完成应用端多端对接">
+  <meta name="description" content="最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx简单了解">
 <meta property="og:url" content="http://example.com/2022/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
-<meta property="og:description" content="最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。  思考: 当前Node的BFF层它的核心价值是什么？  完成应用端多端对接">
+<meta property="og:description" content="最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。">
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/images/nginx/nginx-01/01.png">
 <meta property="article:published_time" content="2022-09-17T09:22:36.000Z">
-<meta property="article:modified_time" content="2022-10-16T07:30:58.248Z">
-<meta property="article:author" content="json">
+<meta property="article:modified_time" content="2022-12-20T14:00:14.563Z">
+<meta property="article:author" content="jason">
 <meta property="article:tag" content="工具">
 <meta property="article:tag" content="Nginx">
 <meta property="article:tag" content="Http服务">
@@ -74,6 +74,8 @@
 				<li><a href="/tags/git/">Git</a></li>
 	        
 				<li><a href="/tags/Study/">学习小记</a></li>
+	        
+				<li><a href="/tags/Arithmetic">算法练习</a></li>
 	        
 			</ul>
 		</nav>
@@ -139,6 +141,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -159,17 +163,19 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
+					<li style="width: 14.285714285714286%"><a href="/">主页</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/Study/">学习小记</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/Study/">学习小记</a></li>
+		        
+					<li style="width: 14.285714285714286%"><a href="/tags/Arithmetic">算法练习</a></li>
 		        
 				</ul>
 			</nav>
@@ -207,6 +213,8 @@
         <blockquote>
 <p>最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。</p>
 </blockquote>
+<span id="more"></span>
+
 <p><strong>思考:</strong> 当前Node的BFF层它的核心价值是什么？<br/></p>
 <ul>
 <li>完成应用端多端对接，减轻服务端兼容性处理，降低复杂度；</li>
@@ -421,7 +429,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 json
+    		&copy; 2022 jason
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -549,6 +557,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Arithmetic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Study</a>
               </li>
             
             <div class="clearfix"></div>

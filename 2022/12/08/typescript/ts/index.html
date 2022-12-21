@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>TypeScript小记 | Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="TS的使用场景 面向项目:    TS-面向解决大型复杂项目，复杂架构以及代码维护场景； JS-脚本化语言，用于面向简单页面场景；   自主检测:   TS - 编译期间、主动发现并指出错误； JS - 无编译阶段   类型检查:   TS - 强类型 JS - 弱类型   运行流程:   TS - 依赖编译，编译后转化为JS (tsc) JS - 不依赖编译    一. TS基础类型的写法 bo">
+  <meta name="description" content="TS的使用场景 面向项目:    TS-面向解决大型复杂项目，复杂架构以及代码维护场景； JS-脚本化语言，用于面向简单页面场景；   自主检测:   TS - 编译期间、主动发现并指出错误； JS - 无编译阶段   类型检查:   TS - 强类型 JS - 弱类型   运行流程:   TS - 依赖编译，编译后转化为JS (tsc) JS - 不依赖编译">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TypeScript小记">
 <meta property="og:url" content="http://example.com/2022/12/08/typescript/ts/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
-<meta property="og:description" content="TS的使用场景 面向项目:    TS-面向解决大型复杂项目，复杂架构以及代码维护场景； JS-脚本化语言，用于面向简单页面场景；   自主检测:   TS - 编译期间、主动发现并指出错误； JS - 无编译阶段   类型检查:   TS - 强类型 JS - 弱类型   运行流程:   TS - 依赖编译，编译后转化为JS (tsc) JS - 不依赖编译    一. TS基础类型的写法 bo">
+<meta property="og:description" content="TS的使用场景 面向项目:    TS-面向解决大型复杂项目，复杂架构以及代码维护场景； JS-脚本化语言，用于面向简单页面场景；   自主检测:   TS - 编译期间、主动发现并指出错误； JS - 无编译阶段   类型检查:   TS - 强类型 JS - 弱类型   运行流程:   TS - 依赖编译，编译后转化为JS (tsc) JS - 不依赖编译">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-12-08T05:32:51.000Z">
-<meta property="article:modified_time" content="2022-12-08T09:00:01.360Z">
-<meta property="article:author" content="json">
+<meta property="article:modified_time" content="2022-12-20T14:00:56.804Z">
+<meta property="article:author" content="jason">
 <meta property="article:tag" content="TS">
 <meta property="article:tag" content="TypeScript">
 <meta property="article:tag" content="JS">
@@ -71,6 +71,8 @@
 				<li><a href="/tags/git/">Git</a></li>
 	        
 				<li><a href="/tags/Study/">学习小记</a></li>
+	        
+				<li><a href="/tags/Arithmetic">算法练习</a></li>
 	        
 			</ul>
 		</nav>
@@ -136,6 +138,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -156,17 +160,19 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
+					<li style="width: 14.285714285714286%"><a href="/">主页</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags/Study/">学习小记</a></li>
+					<li style="width: 14.285714285714286%"><a href="/tags/Study/">学习小记</a></li>
+		        
+					<li style="width: 14.285714285714286%"><a href="/tags/Arithmetic">算法练习</a></li>
 		        
 				</ul>
 			</nav>
@@ -229,6 +235,8 @@
 <li>TS - 依赖编译，编译后转化为JS (tsc)</li>
 <li>JS - 不依赖编译</li>
 </ul>
+<span id="more"></span>
+
 <br/>
 
 <h3 id="一-TS基础类型的写法"><a href="#一-TS基础类型的写法" class="headerlink" title="一. TS基础类型的写法"></a>一. TS基础类型的写法</h3><ul>
@@ -369,11 +377,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/12/20/study/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/12/20/study/Arithmetic/%E5%89%91%E6%8C%87%20Offer%2003.%20%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          剑指 Offer 03. 数组中重复的数字
         
       </div>
     </a>
@@ -418,16 +426,6 @@
 
 
 
-  
-  
-  
-
-  
-
-  
-
-  
-
 
           </div>
         </div>
@@ -436,7 +434,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 json
+    		&copy; 2022 jason
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -564,6 +562,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Arithmetic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Study</a>
               </li>
             
             <div class="clearfix"></div>
