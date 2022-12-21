@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: Study | Jason的个人博客</title>
+  <title>Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Jason的个人博客">
-<meta property="og:url" content="http://example.com/tags/Study/index.html">
+<meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
 <meta property="og:locale">
 <meta property="article:author" content="jason">
@@ -63,7 +63,9 @@
 	        
 				<li><a href="/tags/git/">Git</a></li>
 	        
-				<li><a href="/tags/Study/">学习小记</a></li>
+				<li><a href="/tags/JS">学习小记(JS)</a></li>
+	        
+				<li><a href="/tags/Study">学习小记(其它)</a></li>
 	        
 				<li><a href="/tags/Arithmetic">算法练习</a></li>
 	        
@@ -133,6 +135,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -153,19 +157,21 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 14.285714285714286%"><a href="/">主页</a></li>
+					<li style="width: 12.5%"><a href="/">主页</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 12.5%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 12.5%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 12.5%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 12.5%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/Study/">学习小记</a></li>
+					<li style="width: 12.5%"><a href="/tags/JS">学习小记(JS)</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/Arithmetic">算法练习</a></li>
+					<li style="width: 12.5%"><a href="/tags/Study">学习小记(其它)</a></li>
+		        
+					<li style="width: 12.5%"><a href="/tags/Arithmetic">算法练习</a></li>
 		        
 				</ul>
 			</nav>
@@ -182,104 +188,183 @@
           <div id="js-content" class="content-ll">
             
   
-  
+    <article id="post-nginx/Nginx简单了解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/12/21/study/javascript/%E4%B8%80%E9%81%93%E6%9C%89%E6%84%8F%E6%80%9D%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E7%9A%84%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-12-21T03:20:35.656Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/12/21/study/javascript/%E4%B8%80%E9%81%93%E6%9C%89%E6%84%8F%E6%80%9D%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E7%9A%84%E9%A2%98/">一道有点坑的js语法笔试题</a>
+      <a class="article-title" href="/2022/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/">Nginx简单了解</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2022/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2022-09-17T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2022/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Study</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Http服务</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/12/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2022-12-20T15:12:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-20</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/12/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/">new对象fuction与class的一点差异</a>
+      <a class="article-title" href="/2022/09/13/post/">关于自己的一点思考</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2022/09/13/post/" class="archive-article-date">
+  	<time datetime="2022-09-13T15:20:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <br/>
+
+<h2 id="聊聊最近"><a href="#聊聊最近" class="headerlink" title="聊聊最近"></a>聊聊最近</h2><p>时光荏苒、弹指一挥间。不知不觉已加入我厂已整整4年之久，偶然间翻到之前的个人博客（<a target="_blank" rel="noopener" href="https://lynn1824.github.io)/">https://lynn1824.github.io）</a> 时间定格在了2018，虽然在厂内KM上也发布了一些自己的总结与文章，但回头去想想自己的初心与定下的目标，深感惭愧。并没有很好的坚持下来，似乎需要给自己说点什么，思考点什么。看着最后一篇文章的2018-06-02，似乎我觉得自己需要做点什么了。 </p>
+        
+          <a class="article-more-a" href="/2022/09/13/post/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Study</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/09/13/post/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
 
           </div>
@@ -301,10 +386,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -421,10 +506,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Arithmetic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Study</a>
               </li>
             
             <div class="clearfix"></div>

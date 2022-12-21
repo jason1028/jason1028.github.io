@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>一道有点坑的js语法笔试题 | Jason的个人博客</title>
+  <title>容易入坑的一些js操作 | Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。  源码1234if(!(&amp;#x27;name&amp;#x27; in window)) &amp;#123;    var name &#x3D; &amp;#x27;jason&amp;#x27;;&amp;#125;console.log(name); 结果： undefined">
+  <meta name="description" content="JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。  源码11234if(!(&amp;#x27;name&amp;#x27; in window)) &amp;#123;    var name &#x3D; &amp;#x27;jason&amp;#x27;;&amp;#125;console.log(name); 结果： undefined">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一道有点坑的js语法笔试题">
-<meta property="og:url" content="http://example.com/2022/12/21/study/javascript/%E4%B8%80%E9%81%93%E6%9C%89%E6%84%8F%E6%80%9D%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E7%9A%84%E9%A2%98/index.html">
+<meta property="og:title" content="容易入坑的一些js操作">
+<meta property="og:url" content="http://example.com/2022/12/21/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
-<meta property="og:description" content="JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。  源码1234if(!(&amp;#x27;name&amp;#x27; in window)) &amp;#123;    var name &#x3D; &amp;#x27;jason&amp;#x27;;&amp;#125;console.log(name); 结果： undefined">
+<meta property="og:description" content="JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。  源码11234if(!(&amp;#x27;name&amp;#x27; in window)) &amp;#123;    var name &#x3D; &amp;#x27;jason&amp;#x27;;&amp;#125;console.log(name); 结果： undefined">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-12-21T03:20:35.656Z">
-<meta property="article:modified_time" content="2022-12-21T03:29:28.365Z">
+<meta property="article:modified_time" content="2022-12-21T08:04:08.584Z">
 <meta property="article:author" content="jason">
 <meta property="article:tag" content="JS">
-<meta property="article:tag" content="Study">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Jason的个人博客" type="application/atom+xml">
@@ -69,7 +68,9 @@
 	        
 				<li><a href="/tags/git/">Git</a></li>
 	        
-				<li><a href="/tags/Study/">学习小记</a></li>
+				<li><a href="/tags/JS">学习小记(JS)</a></li>
+	        
+				<li><a href="/tags/Study">学习小记(其它)</a></li>
 	        
 				<li><a href="/tags/Arithmetic">算法练习</a></li>
 	        
@@ -139,6 +140,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -159,19 +162,21 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 14.285714285714286%"><a href="/">主页</a></li>
+					<li style="width: 12.5%"><a href="/">主页</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 12.5%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 12.5%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 12.5%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 12.5%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/Study/">学习小记</a></li>
+					<li style="width: 12.5%"><a href="/tags/JS">学习小记(JS)</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/Arithmetic">算法练习</a></li>
+					<li style="width: 12.5%"><a href="/tags/Study">学习小记(其它)</a></li>
+		        
+					<li style="width: 12.5%"><a href="/tags/Arithmetic">算法练习</a></li>
 		        
 				</ul>
 			</nav>
@@ -186,19 +191,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-study/javascript/一道有意思关于变量提升的题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-study/javascript/容易入坑的一些js操作" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      一道有点坑的js语法笔试题
+      容易入坑的一些js操作
     </h1>
   
 
         
-        <a href="/2022/12/21/study/javascript/%E4%B8%80%E9%81%93%E6%9C%89%E6%84%8F%E6%80%9D%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E7%9A%84%E9%A2%98/" class="archive-article-date">
+        <a href="/2022/12/21/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/" class="archive-article-date">
   	<time datetime="2022-12-21T03:20:35.656Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-21</time>
 </a>
         
@@ -209,14 +214,53 @@
         <blockquote>
 <p>JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。</p>
 </blockquote>
-<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!(<span class="string">&#x27;name&#x27;</span> <span class="keyword">in</span> <span class="variable language_">window</span>)) &#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;jason&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br></pre></td></tr></table></figure>
+<h3 id="源码1"><a href="#源码1" class="headerlink" title="源码1"></a>源码1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!(<span class="string">&#x27;name&#x27;</span> <span class="keyword">in</span> <span class="variable language_">window</span>)) &#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;jason&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br></pre></td></tr></table></figure>
 <p><strong><span style="color: red;">结果：</span></strong> undefined</p>
 <span id="more"></span>
 
-<h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><ul>
+<p><strong>原因分析</strong></p>
+<ul>
 <li>当进入js执行环境时，变量提升； var name = undefined;</li>
 <li>所以此时 <code>&quot;name&quot; in window</code> 值为true, !true = false; 代表name = ‘jason’; 并不会执行；</li>
 <li>最终 <code>console.log(name)</code> 打印值为：undefined;</li>
+</ul>
+<br/>
+
+<h3 id="源码2"><a href="#源码2" class="headerlink" title="源码2"></a>源码2</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">12</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">24</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;number: &#x27;</span> + number); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b);</span><br><span class="line">    <span class="keyword">var</span> number = <span class="number">12</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="title function_">test</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c); <span class="comment">// 36</span></span><br></pre></td></tr></table></figure>
+<p><strong><span style="color: red;">结果：</span></strong> undefined 、36</p>
+<!--more-->
+
+<p><strong>原因分析</strong></p>
+<ul>
+<li>当进入js执行环境时，变量提升； var number = undefined; 所以当执行到 console.log(number) 时， 当前值为：undefined</li>
+<li>当 <code>return a + b</code> 执行后, 返回 <code>a + b = 36;</code> 后续代码并不会执行；</li>
+<li>最终 <code>console.log(c)</code> 打印值为：36;</li>
+</ul>
+<br/>
+
+<h3 id="源码3"><a href="#源码3" class="headerlink" title="源码3"></a>源码3</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">s.<span class="property">fn</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;111&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">s.<span class="title function_">fn</span>(); <span class="comment">// error: fn is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">12</span>;</span><br><span class="line">n.<span class="property">fn</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br><span class="line">n.<span class="title function_">fn</span>(); <span class="comment">// error: fn is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">arr.<span class="property">fn</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">333</span>);</span><br><span class="line">&#125;</span><br><span class="line">arr.<span class="title function_">fn</span>(); <span class="comment">// 333</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意点</strong></p>
+<ul>
+<li>基础数据类型String、Number、Boolean并不能挂载属性，不会报错，但挂载无效；</li>
+<li>引用类型Object，如：Array  Fuction  Null 等，可以挂载并正常调用；</li>
+</ul>
+<br/>
+
+<h3 id="源码4"><a href="#源码4" class="headerlink" title="源码4"></a>源码4</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">12</span>); <span class="comment">// (12) [empty × 12]</span></span><br><span class="line"><span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">12</span>, <span class="number">13</span>); <span class="comment">// [12, 13]</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意点</strong></p>
+<ul>
+<li>new Array为1个参数时，默认会创建一个以参数为个数的空值数组；</li>
+<li>当参数 &gt; 1时， 会生成对应的具体数组；</li>
+</ul>
+<br/>
+
+<h3 id="关于delete方法"><a href="#关于delete方法" class="headerlink" title="关于delete方法"></a>关于delete方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name);  <span class="comment">// abc</span></span><br><span class="line">    <span class="keyword">delete</span> name;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name);  <span class="comment">// abc</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">test</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;123&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);  <span class="comment">// 123</span></span><br><span class="line"><span class="keyword">delete</span> name;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);  <span class="comment">// error: name is not defined</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">name</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p><strong>原因分析</strong></p>
+<ul>
+<li>在test函数中执行，name为局部变量，<code>delete</code>删除无效;</li>
+<li>在全局作用域下，<code>var name = &#39;123&#39;</code>, 相当于window.name = ‘123’，在window对象上挂载了一个name属性；</li>
+<li>所以<code>delete</code>时会有效，执行时将会报错误：name is not defined</li>
+<li>当以一个对象去访问一个属性时，比如：window.name  就算被删除了name，但也会返回undefined，这是js的机制；</li>
 </ul>
 
       
@@ -253,10 +297,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Study</a>
         		</li>
       		
 		</ul>
@@ -312,7 +352,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/12/21/study/javascript/%E4%B8%80%E9%81%93%E6%9C%89%E6%84%8F%E6%80%9D%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E7%9A%84%E9%A2%98/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/12/21/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -325,6 +365,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2022/12/21/study/javascript/%E5%85%B3%E4%BA%8E_toString%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          关于_toString方法的一些场景使用
+        
+      </div>
+    </a>
   
   
     <a href="/2022/12/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
@@ -503,10 +552,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Arithmetic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Study</a>
               </li>
             
             <div class="clearfix"></div>
