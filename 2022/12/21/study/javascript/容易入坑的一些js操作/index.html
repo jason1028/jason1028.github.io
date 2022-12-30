@@ -16,7 +16,7 @@
 <meta property="og:description" content="JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。  源码11234if(!(&amp;#x27;name&amp;#x27; in window)) &amp;#123;    var name &#x3D; &amp;#x27;jason&amp;#x27;;&amp;#125;console.log(name); 结果： undefined">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-12-21T03:20:35.656Z">
-<meta property="article:modified_time" content="2022-12-21T16:02:46.630Z">
+<meta property="article:modified_time" content="2022-12-23T10:03:23.493Z">
 <meta property="article:author" content="jason">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
@@ -72,7 +72,11 @@
 	        
 				<li><a href="/tags/Study">学习小记(其它)</a></li>
 	        
-				<li><a href="/tags/Arithmetic">算法练习</a></li>
+				<li><a href="/tags/Arithmetic">算法</a></li>
+	        
+				<li><a href="/tags/Array">算法练习_数组</a></li>
+	        
+				<li><a href="/tags/String">算法练习_字符串</a></li>
 	        
 			</ul>
 		</nav>
@@ -142,6 +146,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -162,21 +170,25 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 12.5%"><a href="/">主页</a></li>
+					<li style="width: 10%"><a href="/">主页</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 10%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 10%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 10%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 10%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/JS">学习小记(JS)</a></li>
+					<li style="width: 10%"><a href="/tags/JS">学习小记(JS)</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/Study">学习小记(其它)</a></li>
+					<li style="width: 10%"><a href="/tags/Study">学习小记(其它)</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/Arithmetic">算法练习</a></li>
+					<li style="width: 10%"><a href="/tags/Arithmetic">算法</a></li>
+		        
+					<li style="width: 10%"><a href="/tags/Array">算法练习_数组</a></li>
+		        
+					<li style="width: 10%"><a href="/tags/String">算法练习_字符串</a></li>
 		        
 				</ul>
 			</nav>
@@ -276,6 +288,15 @@
 <ul>
 <li>当在一个括号中 <code>(function f() &#123;return &quot;1&quot;&#125;, function g() &#123; return 2 &#125;;)</code> 同时存在2个函数的时候，会以后边的函数为准。</li>
 <li>所以最终执行的是 <code>g(); return 2</code>  typeof 2 = number; </li>
+</ul>
+<br/>
+
+<h3 id="函数声明作为条件语句执行时，函数失效；"><a href="#函数声明作为条件语句执行时，函数失效；" class="headerlink" title="函数声明作为条件语句执行时，函数失效；"></a>函数声明作为条件语句执行时，函数失效；</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 此时为真</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">function</span> <span class="title function_">f</span>(<span class="params"></span>) &#123;&#125;) &#123;</span><br><span class="line">    x += <span class="keyword">typeof</span> f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// &quot;1undefined&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>原因</strong></p>
+<ul>
+<li>在js执行机制中，<code>if(function f()&#123;&#125;)</code> 作为条件是：<code>真</code>;</li>
+<li>所以函数体为执行，但此时 <code>f</code> 已经失效，所以<code>typeof f = undefined</code>;</li>
+<li>最后结果：”1undefined”</li>
 </ul>
 
       
@@ -567,6 +588,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Arithmetic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
             
             <div class="clearfix"></div>
