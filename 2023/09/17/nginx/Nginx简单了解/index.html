@@ -6,20 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>容易入坑的一些js操作 | Jason的个人博客</title>
+  <title>Nginx简单了解 | Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。  源码11234if(!(&amp;#x27;name&amp;#x27; in window)) &amp;#123;    var name &#x3D; &amp;#x27;jason&amp;#x27;;&amp;#125;console.log(name); 结果： undefined">
+  <meta name="description" content="最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="容易入坑的一些js操作">
-<meta property="og:url" content="http://example.com/2022/12/21/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="Nginx简单了解">
+<meta property="og:url" content="http://example.com/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
-<meta property="og:description" content="JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。  源码11234if(!(&amp;#x27;name&amp;#x27; in window)) &amp;#123;    var name &#x3D; &amp;#x27;jason&amp;#x27;;&amp;#125;console.log(name); 结果： undefined">
+<meta property="og:description" content="最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-12-21T03:20:35.656Z">
-<meta property="article:modified_time" content="2022-12-23T10:03:23.493Z">
+<meta property="og:image" content="http://example.com/images/nginx/nginx-01/01.png">
+<meta property="article:published_time" content="2023-09-17T09:22:36.000Z">
+<meta property="article:modified_time" content="2023-01-04T11:25:09.666Z">
 <meta property="article:author" content="jason">
-<meta property="article:tag" content="JS">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="Nginx">
+<meta property="article:tag" content="Http服务">
+<meta property="article:tag" content="NodeJS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/nginx/nginx-01/01.png">
   
     <link rel="alternative" href="/atom.xml" title="Jason的个人博客" type="application/atom+xml">
   
@@ -69,8 +74,6 @@
 				<li><a href="/tags/git/">Git</a></li>
 	        
 				<li><a href="/tags/JS">学习小记(JS)</a></li>
-	        
-				<li><a href="/tags/Study">学习小记(其它)</a></li>
 	        
 				<li><a href="/tags/Arithmetic">算法</a></li>
 	        
@@ -156,8 +159,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -178,29 +179,27 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 8.333333333333334%"><a href="/">主页</a></li>
+					<li style="width: 9.090909090909092%"><a href="/">主页</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/JS">学习小记(JS)</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/JS">学习小记(JS)</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Study">学习小记(其它)</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Arithmetic">算法</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Arithmetic">算法</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Array">算法练习_数组</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Array">算法练习_数组</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/String">算法练习_字符串</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/String">算法练习_字符串</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Link">算法练习_链表</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Link">算法练习_链表</a></li>
-		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Tree">算法练习_树</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Tree">算法练习_树</a></li>
 		        
 				</ul>
 			</nav>
@@ -215,20 +214,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-study/javascript/容易入坑的一些js操作" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-nginx/Nginx简单了解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      容易入坑的一些js操作
+      Nginx简单了解
     </h1>
   
 
         
-        <!-- <a href="/2022/12/21/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2022-12-21T03:20:35.656Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-21</time>
+        <!-- <a href="/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2023-09-17T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-17</time>
 </a> -->
         
       </header>
@@ -236,79 +235,40 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。</p>
+<p>最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。</p>
 </blockquote>
-<h3 id="源码1"><a href="#源码1" class="headerlink" title="源码1"></a>源码1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!(<span class="string">&#x27;name&#x27;</span> <span class="keyword">in</span> <span class="variable language_">window</span>)) &#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;jason&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br></pre></td></tr></table></figure>
-<p><strong><span style="color: red;">结果：</span></strong> undefined</p>
 <span id="more"></span>
 
-<p><strong>原因分析</strong></p>
+<p><strong>思考:</strong> 当前Node的BFF层它的核心价值是什么？<br/></p>
 <ul>
-<li>当进入js执行环境时，变量提升； var name = undefined;</li>
-<li>所以此时 <code>&quot;name&quot; in window</code> 值为true, !true = false; 代表name = ‘jason’; 并不会执行；</li>
-<li>最终 <code>console.log(name)</code> 打印值为：undefined;</li>
+<li>完成应用端多端对接，减轻服务端兼容性处理，降低复杂度；</li>
+<li>基于RPC协议与服务端通信，实现与服务端数据的快速传输；</li>
+<li>完成应用端与服务端之前数据转换、封装、与过滤；</li>
+<li>用户登录鉴权与入口日志收集；</li>
 </ul>
-<br/>
+<p>从架构层面来分析，如果NodeJS同时兼顾BFF层逻辑与高并发处理，工程就会变得异常复杂。你需要的是通过分解来降低它各个层之间的复杂度（复杂度拆解），所以考虑：讲逻辑处理交给Node，高并发以及复杂均衡及http请求操作交给专业的web服务器：nginx。<br><br/></p>
+<h3 id="Nginx了解"><a href="#Nginx了解" class="headerlink" title="Nginx了解"></a>Nginx了解</h3><blockquote>
+<p>Nginx作为当前最流行以及最受欢迎的Http服务器，市场份额已占比全球第一。同时内存占用少，启动极快，高并发能力强的特点，Nginx基于Master主进程，worker子进程相互协助的工作模型，目前在互联网项目中得到广泛使用；</p>
+</blockquote>
+<img src="/images/nginx/nginx-01/01.png" width="800"/>
 
-<h3 id="源码2"><a href="#源码2" class="headerlink" title="源码2"></a>源码2</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">12</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">24</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;number: &#x27;</span> + number); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b);</span><br><span class="line">    <span class="keyword">var</span> number = <span class="number">12</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="title function_">test</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c); <span class="comment">// 36</span></span><br></pre></td></tr></table></figure>
-<p><strong><span style="color: red;">结果：</span></strong> undefined 、36</p>
-<!--more-->
-
-<p><strong>原因分析</strong></p>
-<ul>
-<li>当进入js执行环境时，变量提升； var number = undefined; 所以当执行到 console.log(number) 时， 当前值为：undefined</li>
-<li>当 <code>return a + b</code> 执行后, 返回 <code>a + b = 36;</code> 后续代码并不会执行；</li>
-<li>最终 <code>console.log(c)</code> 打印值为：36;</li>
+<h3 id="Nginx正向代理与反向代理"><a href="#Nginx正向代理与反向代理" class="headerlink" title="Nginx正向代理与反向代理"></a>Nginx正向代理与反向代理</h3><ul>
+<li>正向代理：代理的是客户端，如果翻墙VPN；</li>
+<li>反向代理：代理的是服务端；</li>
 </ul>
-<br/>
-
-<h3 id="源码3"><a href="#源码3" class="headerlink" title="源码3"></a>源码3</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">s.<span class="property">fn</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;111&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">s.<span class="title function_">fn</span>(); <span class="comment">// error: fn is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">12</span>;</span><br><span class="line">n.<span class="property">fn</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br><span class="line">n.<span class="title function_">fn</span>(); <span class="comment">// error: fn is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">arr.<span class="property">fn</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">333</span>);</span><br><span class="line">&#125;</span><br><span class="line">arr.<span class="title function_">fn</span>(); <span class="comment">// 333</span></span><br></pre></td></tr></table></figure>
-<p><strong>注意点</strong></p>
-<ul>
-<li>基础数据类型String、Number、Boolean并不能挂载属性，不会报错，但挂载无效；</li>
-<li>引用类型Object，如：Array  Fuction  Null 等，可以挂载并正常调用；</li>
+<h3 id="Nginx热部署；"><a href="#Nginx热部署；" class="headerlink" title="Nginx热部署；"></a>Nginx热部署；</h3><ul>
+<li>所谓热部署，也可以理解为增量部署，当配置修改后，nginx -s reload重启的方式，并不会中断请求，从而完成配置的更新；</li>
+<li>原理：修改nginx.conf配置后，会新建worker进程来处理new request， 老进程对old request继续处理完成，最终销毁的过程；</li>
 </ul>
-<br/>
-
-<h3 id="源码4"><a href="#源码4" class="headerlink" title="源码4"></a>源码4</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">12</span>); <span class="comment">// (12) [empty × 12]</span></span><br><span class="line"><span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">12</span>, <span class="number">13</span>); <span class="comment">// [12, 13]</span></span><br></pre></td></tr></table></figure>
-<p><strong>注意点</strong></p>
-<ul>
-<li>new Array为1个参数时，默认会创建一个以参数为个数的空值数组；</li>
-<li>当参数 &gt; 1时， 会生成对应的具体数组；</li>
+<h3 id="Nginx高并发处理"><a href="#Nginx高并发处理" class="headerlink" title="Nginx高并发处理"></a>Nginx高并发处理</h3><ul>
+<li>1、基于master主进程做主控制，由worker子进程分配主进程压力；</li>
+<li>2、基于epoll模型做非阻塞IO处理，类似于js当中的事件循环；</li>
 </ul>
-<br/>
-
-<h3 id="关于delete方法"><a href="#关于delete方法" class="headerlink" title="关于delete方法"></a>关于delete方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name);  <span class="comment">// abc</span></span><br><span class="line">    <span class="keyword">delete</span> name;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name);  <span class="comment">// abc</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">test</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;123&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);  <span class="comment">// 123</span></span><br><span class="line"><span class="keyword">delete</span> name;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);  <span class="comment">// error: name is not defined</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">name</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-<p><strong>原因分析</strong></p>
-<ul>
-<li>在test函数中执行，name为局部变量，<code>delete</code>删除无效;</li>
-<li>在全局作用域下，<code>var name = &#39;123&#39;</code>, 相当于window.name = ‘123’，在window对象上挂载了一个name属性；</li>
-<li>所以<code>delete</code>时会有效，执行时将会报错误：name is not defined</li>
-<li>当以一个对象去访问一个属性时，比如：window.name  就算被删除了name，但也会返回undefined，这是js的机制；</li>
+<h3 id="Nginx稳定性保证"><a href="#Nginx稳定性保证" class="headerlink" title="Nginx稳定性保证"></a>Nginx稳定性保证</h3><ul>
+<li>基于keepalive用来保证nginx服务的稳定性，keepalive做一个虚拟IP代理底下真实nginx服务器，监测服务器状态来确定稳定性；</li>
 </ul>
-<br/>
-
-<h3 id="关于function匿名函数赋值的一些注意点"><a href="#关于function匿名函数赋值的一些注意点" class="headerlink" title="关于function匿名函数赋值的一些注意点"></a>关于function匿名函数赋值的一些注意点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数声明</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">test</span>(); <span class="comment">// 111</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数字面量，匿名函数赋值</span></span><br><span class="line"><span class="keyword">var</span> test1 = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">test1</span>(); <span class="comment">// 222</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数声明赋值给变量</span></span><br><span class="line"><span class="keyword">var</span> test2 = <span class="keyword">function</span> <span class="title function_">testABC</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">333</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">test2</span>(); <span class="comment">// 333</span></span><br><span class="line"><span class="title function_">testABC</span>(); <span class="comment">// error: testABC is not a function.</span></span><br></pre></td></tr></table></figure>
-<p><strong>原因分析</strong></p>
-<ul>
-<li>在js处理机制中，非匿名函数赋值给变量后，当前声明的函数名将失效，无法通过该 <code>testABC()</code> 这样去调用；</li>
-</ul>
-<br/> 
-
-<h3 id="关于逗号执行的一点记录"><a href="#关于逗号执行的一点记录" class="headerlink" title="关于逗号执行的一点记录"></a>关于逗号执行的一点记录</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = (<span class="keyword">function</span> <span class="title function_">f</span>(<span class="params"></span>) &#123;<span class="keyword">return</span> <span class="string">&quot;1&quot;</span>&#125;, <span class="keyword">function</span> <span class="title function_">g</span>(<span class="params"></span>) &#123; <span class="keyword">return</span> <span class="number">2</span> &#125;;)();</span><br><span class="line"><span class="keyword">typeof</span> f; <span class="comment">// &quot;number&quot;</span></span><br></pre></td></tr></table></figure>
-<p><strong>原因分析</strong></p>
-<ul>
-<li>当在一个括号中 <code>(function f() &#123;return &quot;1&quot;&#125;, function g() &#123; return 2 &#125;;)</code> 同时存在2个函数的时候，会以后边的函数为准。</li>
-<li>所以最终执行的是 <code>g(); return 2</code>  typeof 2 = number; </li>
-</ul>
-<br/>
-
-<h3 id="函数声明作为条件语句执行时，函数失效；"><a href="#函数声明作为条件语句执行时，函数失效；" class="headerlink" title="函数声明作为条件语句执行时，函数失效；"></a>函数声明作为条件语句执行时，函数失效；</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 此时为真</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">function</span> <span class="title function_">f</span>(<span class="params"></span>) &#123;&#125;) &#123;</span><br><span class="line">    x += <span class="keyword">typeof</span> f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// &quot;1undefined&quot;</span></span><br></pre></td></tr></table></figure>
-<p><strong>原因</strong></p>
-<ul>
-<li>在js执行机制中，<code>if(function f()&#123;&#125;)</code> 作为条件是：<code>真</code>;</li>
-<li>所以函数体为执行，但此时 <code>f</code> 已经失效，所以<code>typeof f = undefined</code>;</li>
-<li>最后结果：”1undefined”</li>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><ul>
+<li>nginx.conf</li>
 </ul>
 
       
@@ -344,7 +304,19 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Http服务</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
         		</li>
       		
 		</ul>
@@ -400,7 +372,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/12/21/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -414,18 +386,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/12/21/study/javascript/%E5%85%B3%E4%BA%8E_toString%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/09/22/nodejs/node_cli/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          关于_toString方法的一些场景使用
+          手动打造一个自己的脚手架
         
       </div>
     </a>
   
   
-    <a href="/2022/12/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">new对象fuction与class的一点差异</div>
+    <a href="/2023/09/17/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">容易入坑的一些js操作</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -444,6 +416,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E4%BA%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">Nginx了解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">Nginx正向代理与反向代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E7%83%AD%E9%83%A8%E7%BD%B2%EF%BC%9B"><span class="toc-number">3.</span> <span class="toc-text">Nginx热部署；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E9%AB%98%E5%B9%B6%E5%8F%91%E5%A4%84%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">Nginx高并发处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E7%A8%B3%E5%AE%9A%E6%80%A7%E4%BF%9D%E8%AF%81"><span class="toc-number">5.</span> <span class="toc-text">Nginx稳定性保证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">配置文件</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>

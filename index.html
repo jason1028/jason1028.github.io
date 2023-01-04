@@ -65,8 +65,6 @@
 	        
 				<li><a href="/tags/JS">学习小记(JS)</a></li>
 	        
-				<li><a href="/tags/Study">学习小记(其它)</a></li>
-	        
 				<li><a href="/tags/Arithmetic">算法</a></li>
 	        
 				<li><a href="/tags/Array">算法练习_数组</a></li>
@@ -151,8 +149,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -173,29 +169,27 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 8.333333333333334%"><a href="/">主页</a></li>
+					<li style="width: 9.090909090909092%"><a href="/">主页</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/JS">学习小记(JS)</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/JS">学习小记(JS)</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Study">学习小记(其它)</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Arithmetic">算法</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Arithmetic">算法</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Array">算法练习_数组</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Array">算法练习_数组</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/String">算法练习_字符串</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/String">算法练习_字符串</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Link">算法练习_链表</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Link">算法练习_链表</a></li>
-		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Tree">算法练习_树</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Tree">算法练习_树</a></li>
 		        
 				</ul>
 			</nav>
@@ -211,6 +205,510 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-nodejs/脚手架npm发布" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/10/17/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/">Node脚手架npm发布</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/10/17/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/" class="archive-article-date">
+  	<time datetime="2023-10-17T13:30:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-17</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>之前通过node完成了一个简单的脚手架，但只是通过npm link在本地开启了一个全局软链接，但要想在其它地方使用该脚手架，就必须发布到npm平台，通过npm i来安装。以此来记录一下它的发布流程。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2023/10/17/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">脚手架</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/10/17/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-nginx/Nginx工作模型与常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Nginx工作模型与常用命令</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2023-10-13T23:14:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-14</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="工作模型与目前分层架构"><a href="#工作模型与目前分层架构" class="headerlink" title="工作模型与目前分层架构"></a>工作模型与目前分层架构</h3><ol>
+<li>Master主进程收集所有客户端请求；</li>
+<li>负载均衡, 如LVS分析各个work子进程的工作情况，做出决策；</li>
+<li>Work子进程处理具体的请求调用与转化；</li>
+<li>调用Node服务中间层；</li>
+<li>服务端调用；</li>
+</ol>
+        
+          <a class="article-more-a" href="/2023/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Http服务</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-nodejs/node_cli" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/22/nodejs/node_cli/">手动打造一个自己的脚手架</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/09/22/nodejs/node_cli/" class="archive-article-date">
+  	<time datetime="2023-09-22T12:10:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-22</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>最近针对后台运营端开发，各个模块相似度较高的特性以及开发过程中冗余代码多、漏删、误删等情况问题的显现，做出来一套类似脚手架的模块化成产工具，基于B/S架构，在浏览器端输入对应的路径与参数，再结合已有template模版，针对search、table、detail自动化生成的一套工具。针对B/S架构的问题，从拉取代码到运行到配置过程相对较繁琐。考虑用脚手架命令来完成模块的生产；</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2023/09/22/nodejs/node_cli/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">脚手架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/09/22/nodejs/node_cli/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-nginx/Nginx简单了解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/">Nginx简单了解</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2023-09-17T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-17</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Http服务</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-study/javascript/容易入坑的一些js操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/17/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/">容易入坑的一些js操作</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/09/17/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2023-09-17T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-17</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。</p>
+</blockquote>
+<h3 id="源码1"><a href="#源码1" class="headerlink" title="源码1"></a>源码1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!(<span class="string">&#x27;name&#x27;</span> <span class="keyword">in</span> <span class="variable language_">window</span>)) &#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;jason&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br></pre></td></tr></table></figure>
+<p><strong><span style="color: red;">结果：</span></strong> undefined</p>
+        
+          <a class="article-more-a" href="/2023/09/17/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/09/17/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-study/javascript/class与fuction类的一些区别记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/08/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/">new对象fuction与class的一点差异</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/08/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2023-08-20T15:12:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-20</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Fuction构造函数与class生产的对象，通过对象赋值给一个变量执行，对应的this有区别。</strong></p>
+        
+          <a class="article-more-a" href="/2023/08/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/08/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-study/Arithmetic/排序算法记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -514,510 +1012,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2023/01/02/study/Arithmetic/Tree/101.%20%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/Arithmetic/Tree/98. 验证二叉搜索树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/02/study/Arithmetic/Tree/98.%20%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">98. 验证二叉搜索树</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2023/01/02/study/Arithmetic/Tree/98.%20%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2023-01-02T13:49:37.822Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。</p>
-</blockquote>
-<blockquote>
-<p>有效 二叉搜索树定义如下：</p>
-</blockquote>
-<ul>
-<li>节点的左子树只包含 小于 当前节点的数。</li>
-<li>节点的右子树只包含 大于 当前节点的数。</li>
-<li>所有左子树和右子树自身必须也是二叉搜索树。</li>
-</ul>
-<p><img src="/images/study/Arithmetic/Tree/02.png" width="400"/><br/></p>
-        
-          <a class="article-more-a" href="/2023/01/02/study/Arithmetic/Tree/98.%20%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/02/study/Arithmetic/Tree/98.%20%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/Arithmetic/Tree/104. 二叉树的最大深度" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/02/study/Arithmetic/Tree/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/">104. 二叉树的最大深度</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2023/01/02/study/Arithmetic/Tree/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" class="archive-article-date">
-  	<time datetime="2023-01-02T13:39:28.832Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>给定一个二叉树，找出其最大深度。二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">给定二叉树 [<span class="number">3</span>,<span class="number">9</span>,<span class="number">20</span>,<span class="literal">null</span>,<span class="literal">null</span>,<span class="number">15</span>,<span class="number">7</span>]，</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/study/Arithmetic/Tree/01.png" width="400"/><br/></p>
-        
-          <a class="article-more-a" href="/2023/01/02/study/Arithmetic/Tree/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/02/study/Arithmetic/Tree/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/Arithmetic/Link/141. 环形链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/01/study/Arithmetic/Link/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/">141. 环形链表</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2023/01/01/study/Arithmetic/Link/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2023-01-01T12:53:51.802Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>给你一个链表的头节点 head ，判断链表中是否有环。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2023/01/01/study/Arithmetic/Link/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/01/study/Arithmetic/Link/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/Arithmetic/Link/234. 回文链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/01/study/Arithmetic/Link/234.%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/">234. 回文链表</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2023/01/01/study/Arithmetic/Link/234.%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2023-01-01T12:48:28.340Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>给你一个单链表的头节点 head ，请你判断该链表是否为回文链表。如果是，返回 true ；否则，返回 false 。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2023/01/01/study/Arithmetic/Link/234.%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/01/study/Arithmetic/Link/234.%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/Arithmetic/Link/21. 合并两个有序链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/01/study/Arithmetic/Link/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">21. 合并两个有序链表</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2023/01/01/study/Arithmetic/Link/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2023-01-01T12:39:17.879Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2023/01/01/study/Arithmetic/Link/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/01/study/Arithmetic/Link/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/Arithmetic/Link/206. 反转链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/01/study/Arithmetic/Link/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">206. 反转链表</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2023/01/01/study/Arithmetic/Link/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2023-01-01T12:27:37.281Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2023/01/01/study/Arithmetic/Link/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/01/study/Arithmetic/Link/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">展开全文 >></a>
         </p>
       
 

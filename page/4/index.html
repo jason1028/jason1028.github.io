@@ -65,8 +65,6 @@
 	        
 				<li><a href="/tags/JS">学习小记(JS)</a></li>
 	        
-				<li><a href="/tags/Study">学习小记(其它)</a></li>
-	        
 				<li><a href="/tags/Arithmetic">算法</a></li>
 	        
 				<li><a href="/tags/Array">算法练习_数组</a></li>
@@ -151,8 +149,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -173,29 +169,27 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 8.333333333333334%"><a href="/">主页</a></li>
+					<li style="width: 9.090909090909092%"><a href="/">主页</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/JS">学习小记(JS)</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/JS">学习小记(JS)</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Study">学习小记(其它)</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Arithmetic">算法</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Arithmetic">算法</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Array">算法练习_数组</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Array">算法练习_数组</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/String">算法练习_字符串</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/String">算法练习_字符串</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Link">算法练习_链表</a></li>
 		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Link">算法练习_链表</a></li>
-		        
-					<li style="width: 8.333333333333334%"><a href="/tags/Tree">算法练习_树</a></li>
+					<li style="width: 9.090909090909092%"><a href="/tags/Tree">算法练习_树</a></li>
 		        
 				</ul>
 			</nav>
@@ -211,6 +205,505 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-study/Arithmetic/Array/217. 存在重复元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/25/study/Arithmetic/Array/217.%20%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/">217. 存在重复元素</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2022/12/25/study/Arithmetic/Array/217.%20%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/" class="archive-article-date">
+  	<time datetime="2022-12-25T06:25:09.064Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-25</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给你一个整数数组 nums 。如果任一值在数组中出现 至少两次 ，返回 true ；如果数组中每个元素互不相同，返回 false 。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1,2,3,1]</span><br><span class="line">输出：true</span><br><span class="line"></span><br><span class="line">输入：nums = [1,2,3,4]</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2022/12/25/study/Arithmetic/Array/217.%20%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/12/25/study/Arithmetic/Array/217.%20%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-study/Arithmetic/Array/189. 轮转数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/25/study/Arithmetic/Array/189.%20%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84/">189. 轮转数组</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2022/12/25/study/Arithmetic/Array/189.%20%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84/" class="archive-article-date">
+  	<time datetime="2022-12-24T16:17:59.307Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-25</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给你一个数组，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1,2,3,4,5,6,7], k = 3</span><br><span class="line">输出: [5,6,7,1,2,3,4]</span><br><span class="line">解释:</span><br><span class="line">向右轮转 1 步: [7,1,2,3,4,5,6]</span><br><span class="line">向右轮转 2 步: [6,7,1,2,3,4,5]</span><br><span class="line">向右轮转 3 步: [5,6,7,1,2,3,4]</span><br><span class="line"></span><br><span class="line">输入：nums = [-1,-100,3,99], k = 2</span><br><span class="line">输出：[3,99,-1,-100]</span><br><span class="line">解释: </span><br><span class="line">向右轮转 1 步: [99,-1,-100,3]</span><br><span class="line">向右轮转 2 步: [3,99,-1,-100]</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2022/12/25/study/Arithmetic/Array/189.%20%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/12/25/study/Arithmetic/Array/189.%20%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-study/Arithmetic/Array/122. 买卖股票的最佳时机 II" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/24/study/Arithmetic/Array/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II/">121. 买卖股票的最佳时机(2)</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2022/12/24/study/Arithmetic/Array/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II/" class="archive-article-date">
+  	<time datetime="2022-12-24T14:31:02.858Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-24</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给你一个整数数组 prices ，其中 prices[i] 表示某支股票第 i 天的价格。<br>在每一天，你可以决定是否购买和/或出售股票。你在任何时候 最多 只能持有 一股 股票。你也可以先购买，然后在 同一天 出售。<br>返回 你能获得的 最大 利润 。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">输入：prices = [7,1,5,3,6,4]</span><br><span class="line">输出：7</span><br><span class="line">解释：在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5 - 1 = 4 。</span><br><span class="line">     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6 - 3 = 3 。</span><br><span class="line">     总利润为 4 + 3 = 7 。</span><br><span class="line"></span><br><span class="line">输入：prices = [1,2,3,4,5]</span><br><span class="line">输出：4</span><br><span class="line">解释：在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5 - 1 = 4 。</span><br><span class="line">     总利润为 4 。</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2022/12/24/study/Arithmetic/Array/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/12/24/study/Arithmetic/Array/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-study/Arithmetic/Array/26. 删除有序数组中的重复项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/24/study/Arithmetic/Array/26.%20%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">26. 删除有序数组中的重复项</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2022/12/24/study/Arithmetic/Array/26.%20%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" class="archive-article-date">
+  	<time datetime="2022-12-24T13:39:05.422Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-24</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。<br>由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个元素应该保存最终结果。<br>将最终结果插入 nums 的前 k 个位置后返回 k 。<br>不要使用额外的空间，<code>你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">输出：<span class="number">2</span>, nums = [<span class="number">1</span>,<span class="number">2</span>,_]</span><br><span class="line">解释：函数应该返回新的长度 <span class="number">2</span> ，并且原数组 nums 的前两个元素被修改为 <span class="number">1</span>, <span class="number">2</span> 。不需要考虑数组中超出新长度后面的元素。</span><br><span class="line"></span><br><span class="line">输入：nums = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">输出：<span class="number">5</span>, nums = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">解释：函数应该返回新的长度 <span class="number">5</span> ， 并且原数组 nums 的前五个元素被修改为 <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2022/12/24/study/Arithmetic/Array/26.%20%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/12/24/study/Arithmetic/Array/26.%20%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-study/Arithmetic/206. 反转链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/24/study/Arithmetic/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">206. 反转链表</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2022/12/24/study/Arithmetic/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2022-12-24T10:26:08.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-24</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">输出：[<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>思路分析</strong><br>1、建立一个空节点；<br>2、开始遍历新链表，其实就是子问题；<br>&nbsp;&nbsp;&nbsp;&nbsp;<em><strong>子问题分析</strong></em>：<br>&nbsp;&nbsp;&nbsp;&nbsp;- 当拿到一个节点时，要做的是：<br>&nbsp;&nbsp;&nbsp;&nbsp;a. 保存下一个节点（1、因为循环要用到  2、如果断开了就找不到了）；<br>&nbsp;&nbsp;&nbsp;&nbsp;b. 将当前节点指向新列表节点；<br>&nbsp;&nbsp;&nbsp;&nbsp;c. 新节点指向当前节点；</p>
+        
+          <a class="article-more-a" href="/2022/12/24/study/Arithmetic/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/12/24/study/Arithmetic/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-study/Arithmetic/21. 合并两个有序链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/23/study/Arithmetic/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">21. 合并两个有序链表</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2022/12/23/study/Arithmetic/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2022-12-23T15:14:03.289Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-23</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入：l1 = [1,2,4], l2 = [1,3,4]</span><br><span class="line">输出：[1,1,2,3,4,4]</span><br><span class="line"></span><br><span class="line">输入：l1 = [], l2 = []</span><br><span class="line">输出：[]</span><br><span class="line"></span><br><span class="line">输入：l1 = [], l2 = [0]</span><br><span class="line">输出：[0]</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2022/12/23/study/Arithmetic/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/12/23/study/Arithmetic/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-study/Arithmetic/14. 最长公共前缀" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -520,487 +1013,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/12/23/study/Arithmetic/20.%20%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/Arithmetic/1. 两数之和" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/23/study/Arithmetic/1.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">1、两数之和</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2022/12/23/study/Arithmetic/1.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="archive-article-date">
-  	<time datetime="2022-12-23T08:17:18.829Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-23</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。你可以按任意顺序返回答案。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [<span class="number">2</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">15</span>], target = <span class="number">9</span></span><br><span class="line">输出：[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">解释：因为 nums[<span class="number">0</span>] + nums[<span class="number">1</span>] == <span class="number">9</span> ，返回 [<span class="number">0</span>, <span class="number">1</span>] 。</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2022/12/23/study/Arithmetic/1.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/23/study/Arithmetic/1.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/javascript/让你充分理解箭头函数this的一道题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/22/study/javascript/%E8%AE%A9%E4%BD%A0%E5%85%85%E5%88%86%E7%90%86%E8%A7%A3%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0this%E7%9A%84%E4%B8%80%E9%81%93%E9%A2%98/">让你充分理解箭头函数this的一道题</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2022/12/22/study/javascript/%E8%AE%A9%E4%BD%A0%E5%85%85%E5%88%86%E7%90%86%E8%A7%A3%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0this%E7%9A%84%E4%B8%80%E9%81%93%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-12-22T15:28:33.094Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-22</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>箭头函数 <code>() =&gt; &#123; console.log(123); &#125;</code>, 在我们的实际工作中特别常用，它跟普通函数有很多的区别，比如：<code>1个形参时可以不带()</code> <code>(a, b) =&gt; a + b;代表 默认返回 a + b</code><br><code>没有arguments</code> <code>没有constructor</code> 等等，它必须依赖字面量的方式调用，但其中有一个非常非常重要的差异，那就是 **<code>this指向的改变</code>**；</p>
-</blockquote>
-<p>接下来让我们看以下代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 普通函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">obj</span> = &#123;</span><br><span class="line">        <span class="attr">aa</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">bb</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">cc</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">p.<span class="property">obj</span>.<span class="title function_">cc</span>(); <span class="comment">// this -&gt; p.obj</span></span><br><span class="line"><span class="keyword">var</span> fn = p.<span class="property">obj</span>.<span class="property">cc</span>;</span><br><span class="line"><span class="title function_">fn</span>();   <span class="comment">// this -&gt; window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">obj</span> = &#123;</span><br><span class="line">        <span class="attr">aa</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">bb</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">cc</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">p.<span class="property">obj</span>.<span class="title function_">cc</span>(); <span class="comment">// this -&gt; p</span></span><br><span class="line"><span class="keyword">const</span> fn = p.<span class="property">obj</span>.<span class="property">cc</span>;</span><br><span class="line"><span class="title function_">fn</span>();       <span class="comment">// this -&gt; p</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Person</span>();</span><br><span class="line"><span class="comment">// 如果cc是普通函数</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">obj</span>.<span class="title function_">cc</span>(); <span class="comment">// this -&gt; obj</span></span><br><span class="line"><span class="comment">// 如果cc是箭头函数</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">obj</span>.<span class="title function_">cc</span>(); <span class="comment">// this -&gt; window</span></span><br></pre></td></tr></table></figure>
-<p><strong>思考与分析</strong><br>1、普通函数就不解释了，谁调用this归谁，全局下理论上属于window调用，所以指向 <code>window</code>;<br>2、箭头函数下： 为何 p.obj.cc() -&gt; p  || fn() -&gt; p <strong><span style="color:red;">why?</span></strong><br><em><strong>答案：</strong></em><br>1、当 const p = new Person()时，将当前执行环境 Person 中的 this 就直接绑死到了 this.obj.cc.bind(this) 上。<br>2、所以后面无论你把它赋值给谁，就绑死 p 这个对象了，所以它才一直是指向p;<br><em><strong>同理</strong></em><br>1、当 Person() 这样直接调用时，当前执行环境下的this为window，所以直接就绑死了 obj.cc.bind(window)<br>2、所以后面无论怎么传递调用，那它就是 window</p>
-<p>总结一句话就是：<strong>箭头函数的 <code>this</code> 就是根据它执行上下文来绑死的，绑死的那一刻就决定了要嫁给谁了，终身不变，无怨无悔；</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/22/study/javascript/%E8%AE%A9%E4%BD%A0%E5%85%85%E5%88%86%E7%90%86%E8%A7%A3%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0this%E7%9A%84%E4%B8%80%E9%81%93%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/javascript/一些关于js经典的面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/22/study/javascript/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8Ejs%E7%BB%8F%E5%85%B8%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/">一些关于js经典的面试题</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2022/12/22/study/javascript/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8Ejs%E7%BB%8F%E5%85%B8%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-12-22T02:54:54.845Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-22</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>通过JS做题时考验你对js基础掌握是否扎实的有效手段，同时也是面试过程中面试官对候选人js基础掌握的一种常见考核方式，通过做题验证我们js基础是否扎实的同时，也巩固了我们的js基础能力，以下是我从网络上搜集到的面试题，一起来看看吧；</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2022/12/22/study/javascript/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8Ejs%E7%BB%8F%E5%85%B8%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/22/study/javascript/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8Ejs%E7%BB%8F%E5%85%B8%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/javascript/关于JS当中继承的一些梳理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/21/study/javascript/%E5%85%B3%E4%BA%8EJS%E5%BD%93%E4%B8%AD%E7%BB%A7%E6%89%BF%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A2%B3%E7%90%86/">关于JS当中继承的一些梳理</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2022/12/21/study/javascript/%E5%85%B3%E4%BA%8EJS%E5%BD%93%E4%B8%AD%E7%BB%A7%E6%89%BF%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A2%B3%E7%90%86/" class="archive-article-date">
-  	<time datetime="2022-12-21T07:58:08.599Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-21</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>原型链是js当中实现继承的一种主要方式，比如 <code>var str = &#39;abc&#39;;</code> <code>str.split(&#39;&#39;) = [a, b, c]</code>，我们在str属性上并没有split方法，但却可以调用，这就是JS当中原型机制的作用；</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2022/12/21/study/javascript/%E5%85%B3%E4%BA%8EJS%E5%BD%93%E4%B8%AD%E7%BB%A7%E6%89%BF%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A2%B3%E7%90%86/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/21/study/javascript/%E5%85%B3%E4%BA%8EJS%E5%BD%93%E4%B8%AD%E7%BB%A7%E6%89%BF%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A2%B3%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/javascript/关于_toString方法的一些使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/21/study/javascript/%E5%85%B3%E4%BA%8E_toString%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8/">关于_toString方法的一些场景使用</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2022/12/21/study/javascript/%E5%85%B3%E4%BA%8E_toString%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2022-12-21T03:50:09.165Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-21</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>toString方法在js当中是一个非常场景的方法，很多人第一印象就是通过toString以字符串的方式返回对应的数据，如：[1, 2, 3].toString() === ‘1,2,3’，那它还有其它的使用场景吗？</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2022/12/21/study/javascript/%E5%85%B3%E4%BA%8E_toString%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/21/study/javascript/%E5%85%B3%E4%BA%8E_toString%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/javascript/容易入坑的一些js操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/21/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/">容易入坑的一些js操作</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2022/12/21/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2022-12-21T03:20:35.656Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-21</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>JS是一门灵活的动态高级语言，也正是它的灵活，有时候我们会遇到一些非常容易误判代码逻辑的问题，接下来看一下这道题吧。</p>
-</blockquote>
-<h3 id="源码1"><a href="#源码1" class="headerlink" title="源码1"></a>源码1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!(<span class="string">&#x27;name&#x27;</span> <span class="keyword">in</span> <span class="variable language_">window</span>)) &#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;jason&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br></pre></td></tr></table></figure>
-<p><strong><span style="color: red;">结果：</span></strong> undefined</p>
-        
-          <a class="article-more-a" href="/2022/12/21/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/21/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/">展开全文 >></a>
         </p>
       
 
