@@ -61,6 +61,8 @@
 	        
 				<li><a href="/tags/Nginx/">Nginx_相关</a></li>
 	        
+				<li><a href="/tags/Record/">学习小记</a></li>
+	        
 				<li><a href="/tags/git/">Git</a></li>
 	        
 				<li><a href="/tags/JS">学习小记(JS)</a></li>
@@ -149,6 +151,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -169,27 +173,29 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 9.090909090909092%"><a href="/">主页</a></li>
+					<li style="width: 8.333333333333334%"><a href="/">主页</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/NodeJS/">NodeJS_相关</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/Nginx/">Nginx_相关</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Nginx/">Nginx_相关</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/git/">Git</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Record/">学习小记</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/JS">学习小记(JS)</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/git/">Git</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/Arithmetic">算法</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/JS">学习小记(JS)</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/Array">算法练习_数组</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Arithmetic">算法</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/String">算法练习_字符串</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Array">算法练习_数组</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/Link">算法练习_链表</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/String">算法练习_字符串</a></li>
 		        
-					<li style="width: 9.090909090909092%"><a href="/tags/Tree">算法练习_树</a></li>
+					<li style="width: 8.333333333333334%"><a href="/tags/Link">算法练习_链表</a></li>
+		        
+					<li style="width: 8.333333333333334%"><a href="/tags/Tree">算法练习_树</a></li>
 		        
 				</ul>
 			</nav>
@@ -205,6 +211,177 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-study/Arithmetic/Array/121. 买卖股票的最佳时机" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/23/study/Arithmetic/Array/121.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/">121. 买卖股票的最佳时机</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2022/12/23/study/Arithmetic/Array/121.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/" class="archive-article-date">
+  	<time datetime="2022-12-23T09:16:34.790Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-23</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。<br>你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。<br>返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：[7,1,5,3,6,4]</span><br><span class="line">输出：5</span><br><span class="line">解释：在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1=5 。</span><br><span class="line">     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2022/12/23/study/Arithmetic/Array/121.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/12/23/study/Arithmetic/Array/121.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-study/Arithmetic/20. 有效的括号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/23/study/Arithmetic/20.%20%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">20. 有效的括号</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2022/12/23/study/Arithmetic/20.%20%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" class="archive-article-date">
+  	<time datetime="2022-12-23T08:53:36.356Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-23</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。<br><strong>有效字符串需满足：</strong></p>
+</blockquote>
+<ul>
+<li>左括号必须用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。</li>
+<li>每个右括号都有一个对应的相同类型的左括号。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入：s = <span class="string">&quot;()&quot;</span></span><br><span class="line">输出：<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">输入：s = <span class="string">&quot;()[]&#123;&#125;&quot;</span></span><br><span class="line">输出：<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">输入：s = <span class="string">&quot;(]&quot;</span></span><br><span class="line">输出：<span class="literal">false</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2022/12/23/study/Arithmetic/20.%20%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/12/23/study/Arithmetic/20.%20%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-study/Arithmetic/1. 两数之和" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1037,6 +1214,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Tree</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Record</a>
               </li>
             
             <div class="clearfix"></div>
