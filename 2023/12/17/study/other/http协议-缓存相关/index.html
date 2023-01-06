@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>http协议-缓存相关 | Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器缓存，又称http缓存。是指：当我们输入一个网址第一次访问某个资源的时候（一张图片、一个文件包），客户端存储器会在前端缓存一个副本，以便下次再次访问的时候不需要从服务器再次返回资源。其作用是：提升页面渲染速度，减少服务器压力。缩短了访问时间，显著提高网站性能。  Expires:expires:Thu, 10 Dec 2016 23:21:59 GMT这里是告诉客户端浏览器，在2016-1">
+  <meta name="description" content="浏览器缓存，又称http缓存。是指：当我们输入一个网址第一次访问某个资源的时候（一张图片、一个文件包），客户端存储器会在前端缓存一个副本，以便下次再次访问的时候不需要从服务器再次返回资源。其作用是：提升页面渲染速度，减少服务器压力。缩短了访问时间，显著提高网站性能。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="http协议-缓存相关">
 <meta property="og:url" content="http://example.com/2023/12/17/study/other/http%E5%8D%8F%E8%AE%AE-%E7%BC%93%E5%AD%98%E7%9B%B8%E5%85%B3/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
-<meta property="og:description" content="浏览器缓存，又称http缓存。是指：当我们输入一个网址第一次访问某个资源的时候（一张图片、一个文件包），客户端存储器会在前端缓存一个副本，以便下次再次访问的时候不需要从服务器再次返回资源。其作用是：提升页面渲染速度，减少服务器压力。缩短了访问时间，显著提高网站性能。  Expires:expires:Thu, 10 Dec 2016 23:21:59 GMT这里是告诉客户端浏览器，在2016-1">
+<meta property="og:description" content="浏览器缓存，又称http缓存。是指：当我们输入一个网址第一次访问某个资源的时候（一张图片、一个文件包），客户端存储器会在前端缓存一个副本，以便下次再次访问的时候不需要从服务器再次返回资源。其作用是：提升页面渲染速度，减少服务器压力。缩短了访问时间，显著提高网站性能。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-12-17T09:22:36.000Z">
-<meta property="article:modified_time" content="2023-01-05T04:41:41.021Z">
+<meta property="article:modified_time" content="2023-01-06T04:26:12.629Z">
 <meta property="article:author" content="jason">
 <meta property="article:tag" content="Record">
 <meta name="twitter:card" content="summary">
@@ -238,6 +238,8 @@
         <blockquote>
 <p>浏览器缓存，又称http缓存。是指：当我们输入一个网址第一次访问某个资源的时候（一张图片、一个文件包），客户端存储器会在前端缓存一个副本，以便下次再次访问的时候不需要从服务器再次返回资源。其作用是：提升页面渲染速度，减少服务器压力。缩短了访问时间，显著提高网站性能。</p>
 </blockquote>
+<span id="more"></span>
+
 <p><strong>Expires:</strong><br>expires:Thu, 10 Dec 2016 23:21:59 GMT<br>这里是告诉客户端浏览器，在2016-12-10 23:21:59分之前，这个缓存是有效的，第二次请求，浏览器不会连接服务器，直接从本地缓存中读取，如下图：<br>不过 Expires 有缺点，比如说，服务端和客户端的时间设置可能不同，这就会使缓存的失效可能并不能精确的按服务器的预期进行。</p>
 <p><strong>Cache-Control:</strong><br>cache-control:max-age=3600<br>这是声明的是一个相对的秒数，表示从现在起，3600秒内都是有效的，这样就避免了服务器端与客户端时间不同步的问题，但cache-control暂时只有http1.1版本才支持。1.0没有。所以在大多数情况一般expires与cache-control一般都会带上，保证兼容。如果是http1.1,会优先支持cache-control。</p>
 <p><strong>Last-Modified/If-Modified-Since：</strong><br>当我们请求服务器上的某个资源时，请求成功后，服务器端在响应头中返回状态码为200，同时会带上Last-Modified后面会跟上一个时间，这个时间就是我们服务器上文件的最后修改时间：Last-Modified: Mon, 30 Nov 2016 23:17:59 GMT</p>
