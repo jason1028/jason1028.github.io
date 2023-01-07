@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023/12 | Jason的个人博客</title>
+  <title>移动端-Retina屏幕1px的问题 | Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jason的个人博客">
-<meta property="og:url" content="http://example.com/archives/2023/12/index.html">
+  <meta name="description" content="如果仅仅使用 css 的 1px 来设置 border ，那可能会出现比较粗的情况。因为，有些手机屏幕的 DPR &#x3D; 2 ，即 1px 它会用两个物理像素来显示，就粗了。  1234#box &amp;#123;    padding: 10px 0;    border-bottom: 1px solid #eee;&amp;#125; 如下图所示：上面App的border，下面1px的border，有明显的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端-Retina屏幕1px的问题">
+<meta property="og:url" content="http://example.com/2023/12/19/study/other/Retina%E5%B1%8F%E5%B9%951%E5%83%8F%E7%B4%A0%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
+<meta property="og:description" content="如果仅仅使用 css 的 1px 来设置 border ，那可能会出现比较粗的情况。因为，有些手机屏幕的 DPR &#x3D; 2 ，即 1px 它会用两个物理像素来显示，就粗了。  1234#box &amp;#123;    padding: 10px 0;    border-bottom: 1px solid #eee;&amp;#125; 如下图所示：上面App的border，下面1px的border，有明显的">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/images/study/Other/001.png">
+<meta property="og:image" content="http://example.com/images/study/Other/002.png">
+<meta property="article:published_time" content="2023-12-19T09:22:36.000Z">
+<meta property="article:modified_time" content="2023-01-07T09:03:43.485Z">
 <meta property="article:author" content="jason">
+<meta property="article:tag" content="Record">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/study/Other/001.png">
   
     <link rel="alternative" href="/atom.xml" title="Jason的个人博客" type="application/atom+xml">
   
@@ -204,38 +212,78 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-study/other/Retina屏幕1像素的问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      移动端-Retina屏幕1px的问题
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">
-              <!-- 2023 -->
-          </a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/12/19/study/other/Retina%E5%B1%8F%E5%B9%951%E5%83%8F%E7%B4%A0%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+
+        
+        <!-- <a href="/2023/12/19/study/other/Retina%E5%B1%8F%E5%B9%951%E5%83%8F%E7%B4%A0%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
   	<time datetime="2023-12-19T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-19</time>
 </a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/19/study/other/Retina%E5%B1%8F%E5%B9%951%E5%83%8F%E7%B4%A0%E7%9A%84%E9%97%AE%E9%A2%98/">移动端-Retina屏幕1px的问题</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>如果仅仅使用 css 的 1px 来设置 border ，那可能会出现比较粗的情况。因为，有些手机屏幕的 DPR = 2 ，即 1px 它会用两个物理像素来显示，就粗了。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#eee</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如下图所示：上面App的border，下面1px的border，有明显的区别。显得很粗糙，很不精致，这时候你要发上去的话，设计师估计会把你胖揍一顿。</p>
+<p><img src="/images/study/Other/001.png" width="700"/><br/></p>
+<p><em><strong>PS：你不能直接写 0.5px ，浏览器兼容性不好，渲染出来可能还是 1px 的效果。</strong></em></p>
+<span id="more"></span>
 
-        <div class="article-info info-on-right">
-          
+<p><strong>解决方案</strong></p>
+<ul>
+<li>我们可以使用 css 伪类 + transform 来优化这一问题。即把默认的 1px 宽度给压缩 0.5 倍。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#box</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#d9d9d9</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(<span class="number">0.5</span>);</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/images/study/Other/002.png" width="700"/><br/></li>
+</ul>
+<p><strong>如果有 border-radius 怎么办?</strong></p>
+<ul>
+<li>使用box-shadow设置即可；</li>
+<li>X 偏移量 0</li>
+<li>Y 偏移量 0</li>
+<li>阴影模糊半径 0</li>
+<li>阴影扩散半径 0.5px</li>
+<li>阴影颜色<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-id">#box2</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="comment">/* border: 1px solid #d9d9d9; */</span></span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0.5px</span> <span class="number">#d9d9d9</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -247,141 +295,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/19/study/other/Retina%E5%B1%8F%E5%B9%951%E5%83%8F%E7%B4%A0%E7%9A%84%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/12/18/study/other/DNS%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2023-12-18T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-18</time>
-</a> -->
+<nav id="article-nav">
+  
+  
+    <a href="/2023/12/18/study/other/DNS%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DNS解析过程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/18/study/other/DNS%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B/">DNS解析过程</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Record</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/12/18/typescript/ts/" class="archive-article-date">
-  	<time datetime="2023-12-18T05:32:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-18</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/18/typescript/ts/">TypeScript小记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">TS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">TypeScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/12/17/study/other/http%E5%8D%8F%E8%AE%AE-%E7%BC%93%E5%AD%98%E7%9B%B8%E5%85%B3/" class="archive-article-date">
-  	<time datetime="2023-12-17T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-17</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/17/study/other/http%E5%8D%8F%E8%AE%AE-%E7%BC%93%E5%AD%98%E7%9B%B8%E5%85%B3/">http协议-缓存相关</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Record</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -404,8 +417,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
