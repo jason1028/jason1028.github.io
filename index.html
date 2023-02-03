@@ -371,117 +371,6 @@
 
 
   
-    <article id="post-typescript/ts" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/18/typescript/ts/">TypeScript小记</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2023/12/18/typescript/ts/" class="archive-article-date">
-  	<time datetime="2023-12-18T05:32:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-18</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="TS的使用场景"><a href="#TS的使用场景" class="headerlink" title="TS的使用场景"></a>TS的使用场景</h2><blockquote>
-<p>面向项目: </p>
-</blockquote>
-<ul>
-<li>TS-面向解决大型复杂项目，复杂架构以及代码维护场景；</li>
-<li>JS-脚本化语言，用于面向简单页面场景；</li>
-</ul>
-<blockquote>
-<p>自主检测:</p>
-</blockquote>
-<ul>
-<li>TS - 编译期间、主动发现并指出错误；</li>
-<li>JS - 无编译阶段</li>
-</ul>
-<blockquote>
-<p>类型检查:</p>
-</blockquote>
-<ul>
-<li>TS - 强类型</li>
-<li>JS - 弱类型</li>
-</ul>
-<blockquote>
-<p>运行流程:</p>
-</blockquote>
-<ul>
-<li>TS - 依赖编译，编译后转化为JS (tsc)</li>
-<li>JS - 不依赖编译</li>
-</ul>
-        
-          <a class="article-more-a" href="/2023/12/18/typescript/ts/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">TS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">TypeScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/18/typescript/ts/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-study/other/http协议-缓存相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -560,6 +449,199 @@
 
 
   
+    <article id="post-nodejs/node_cli" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/02/03/nodejs/node_cli/">手动打造一个自己的脚手架</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/02/03/nodejs/node_cli/" class="archive-article-date">
+  	<time datetime="2023-02-03T12:10:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-03</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>最近针对后台运营端开发，各个模块相似度较高的特性以及开发过程中冗余代码多、漏删、误删等情况问题的显现，做出来一套类似脚手架的模块化成产工具，基于B/S架构，在浏览器端输入对应的路径与参数，再结合已有template模版，针对search、table、detail自动化生成的一套工具。针对B/S架构的问题，从拉取代码到运行到配置过程相对较繁琐。考虑用脚手架命令来完成模块的生产；</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2023/02/03/nodejs/node_cli/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">脚手架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/02/03/nodejs/node_cli/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-typescript/ts" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/02/03/typescript/ts/">TypeScript小记</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/02/03/typescript/ts/" class="archive-article-date">
+  	<time datetime="2023-02-03T05:32:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-03</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="TS的使用场景"><a href="#TS的使用场景" class="headerlink" title="TS的使用场景"></a>TS的使用场景</h2><blockquote>
+<p>面向项目: </p>
+</blockquote>
+<ul>
+<li>TS-面向解决大型复杂项目，复杂架构以及代码维护场景；</li>
+<li>JS-脚本化语言，用于面向简单页面场景；</li>
+</ul>
+<blockquote>
+<p>自主检测:</p>
+</blockquote>
+<ul>
+<li>TS - 编译期间、主动发现并指出错误；</li>
+<li>JS - 无编译阶段</li>
+</ul>
+<blockquote>
+<p>类型检查:</p>
+</blockquote>
+<ul>
+<li>TS - 强类型</li>
+<li>JS - 弱类型</li>
+</ul>
+<blockquote>
+<p>运行流程:</p>
+</blockquote>
+<ul>
+<li>TS - 依赖编译，编译后转化为JS (tsc)</li>
+<li>JS - 不依赖编译</li>
+</ul>
+        
+          <a class="article-more-a" href="/2023/02/03/typescript/ts/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">TS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">TypeScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/02/03/typescript/ts/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-nodejs/脚手架npm发布" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -567,13 +649,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/10/17/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/">Node脚手架npm发布</a>
+      <a class="article-title" href="/2023/02/02/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/">Node脚手架npm发布</a>
     </h1>
   
 
         
-        <!-- <a href="/2023/10/17/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/" class="archive-article-date">
-  	<time datetime="2023-10-17T13:30:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-17</time>
+        <!-- <a href="/2023/02/02/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/" class="archive-article-date">
+  	<time datetime="2023-02-02T13:30:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-02</time>
 </a> -->
         
       </header>
@@ -584,7 +666,7 @@
 <p>之前通过node完成了一个简单的脚手架，但只是通过npm link在本地开启了一个全局软链接，但要想在其它地方使用该脚手架，就必须发布到npm平台，通过npm i来安装。以此来记录一下它的发布流程。</p>
 </blockquote>
         
-          <a class="article-more-a" href="/2023/10/17/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/#more">more >></a>
+          <a class="article-more-a" href="/2023/02/02/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/#more">more >></a>
         
       
 
@@ -616,179 +698,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/10/17/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-nginx/Nginx工作模型与常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Nginx工作模型与常用命令</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2023/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2023-10-13T23:14:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-14</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="工作模型与目前分层架构"><a href="#工作模型与目前分层架构" class="headerlink" title="工作模型与目前分层架构"></a>工作模型与目前分层架构</h3><ol>
-<li>Master主进程收集所有客户端请求；</li>
-<li>负载均衡, 如LVS分析各个work子进程的工作情况，做出决策；</li>
-<li>Work子进程处理具体的请求调用与转化；</li>
-<li>调用Node服务中间层；</li>
-<li>服务端调用；</li>
-</ol>
-        
-          <a class="article-more-a" href="/2023/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Http服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/10/14/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-nodejs/node_cli" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/09/22/nodejs/node_cli/">手动打造一个自己的脚手架</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2023/09/22/nodejs/node_cli/" class="archive-article-date">
-  	<time datetime="2023-09-22T12:10:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-22</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>最近针对后台运营端开发，各个模块相似度较高的特性以及开发过程中冗余代码多、漏删、误删等情况问题的显现，做出来一套类似脚手架的模块化成产工具，基于B/S架构，在浏览器端输入对应的路径与参数，再结合已有template模版，针对search、table、detail自动化生成的一套工具。针对B/S架构的问题，从拉取代码到运行到配置过程相对较繁琐。考虑用脚手架命令来完成模块的生产；</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2023/09/22/nodejs/node_cli/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">脚手架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/09/22/nodejs/node_cli/">展开全文 >></a>
+          <a class="article-more-a" href="/2023/02/02/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/">展开全文 >></a>
         </p>
       
 
@@ -825,13 +735,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/">Nginx简单了解</a>
+      <a class="article-title" href="/2023/02/02/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/">Nginx简单了解</a>
     </h1>
   
 
         
-        <!-- <a href="/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2023-09-17T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-17</time>
+        <!-- <a href="/2023/02/02/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2023-02-02T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-02</time>
 </a> -->
         
       </header>
@@ -842,7 +752,7 @@
 <p>最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。</p>
 </blockquote>
         
-          <a class="article-more-a" href="/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/#more">more >></a>
+          <a class="article-more-a" href="/2023/02/02/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/#more">more >></a>
         
       
 
@@ -878,7 +788,180 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/09/17/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/">展开全文 >></a>
+          <a class="article-more-a" href="/2023/02/02/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-study/Arithmetic/String/5. 最长回文子串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/02/02/study/Arithmetic/String/5.%20%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">5. 最长回文子串</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/02/02/study/Arithmetic/String/5.%20%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="archive-article-date">
+  	<time datetime="2023-02-02T08:44:04.667Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-02</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给你一个字符串 s，找到 s 中最长的回文子串。如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。</p>
+</blockquote>
+<p><strong>请注意：</strong> 假设环境不允许存储 64 位整数（有符号或无符号）。</p>
+        
+          <a class="article-more-a" href="/2023/02/02/study/Arithmetic/String/5.%20%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/02/02/study/Arithmetic/String/5.%20%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-nginx/Nginx工作模型与常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/02/02/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Nginx工作模型与常用命令</a>
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/02/02/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2023-02-01T23:14:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-02</time>
+</a> -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="工作模型与目前分层架构"><a href="#工作模型与目前分层架构" class="headerlink" title="工作模型与目前分层架构"></a>工作模型与目前分层架构</h3><ol>
+<li>Master主进程收集所有客户端请求；</li>
+<li>负载均衡, 如LVS分析各个work子进程的工作情况，做出决策；</li>
+<li>Work子进程处理具体的请求调用与转化；</li>
+<li>调用Node服务中间层；</li>
+<li>服务端调用；</li>
+</ol>
+        
+          <a class="article-more-a" href="/2023/02/02/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Http服务</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/02/02/nginx/Nginx%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
         </p>
       
 
@@ -915,13 +998,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/09/17/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/">容易入坑的一些js操作</a>
+      <a class="article-title" href="/2023/02/01/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/">容易入坑的一些js操作</a>
     </h1>
   
 
         
-        <!-- <a href="/2023/09/17/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2023-09-17T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-17</time>
+        <!-- <a href="/2023/02/01/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2023-02-01T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-01</time>
 </a> -->
         
       </header>
@@ -934,7 +1017,7 @@
 <h3 id="源码1"><a href="#源码1" class="headerlink" title="源码1"></a>源码1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!(<span class="string">&#x27;name&#x27;</span> <span class="keyword">in</span> <span class="variable language_">window</span>)) &#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;jason&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br></pre></td></tr></table></figure>
 <p><strong><span style="color: red;">结果：</span></strong> undefined</p>
         
-          <a class="article-more-a" href="/2023/09/17/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/#more">more >></a>
+          <a class="article-more-a" href="/2023/02/01/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/#more">more >></a>
         
       
 
@@ -958,83 +1041,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/09/17/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-study/javascript/class与fuction类的一些区别记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/08/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/">new对象fuction与class的一点差异</a>
-    </h1>
-  
-
-        
-        <!-- <a href="/2023/08/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2023-08-20T15:12:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-20</time>
-</a> -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Fuction构造函数与class生产的对象，通过对象赋值给一个变量执行，对应的this有区别。</strong></p>
-        
-          <a class="article-more-a" href="/2023/08/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/08/20/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/">展开全文 >></a>
+          <a class="article-more-a" href="/2023/02/01/study/javascript/%E5%AE%B9%E6%98%93%E5%85%A5%E5%9D%91%E7%9A%84%E4%B8%80%E4%BA%9Bjs%E6%93%8D%E4%BD%9C/">展开全文 >></a>
         </p>
       
 

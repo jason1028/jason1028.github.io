@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023/1 | Jason的个人博客</title>
+  <title>Nginx简单了解 | Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jason的个人博客">
-<meta property="og:url" content="http://example.com/archives/2023/01/index.html">
+  <meta name="description" content="最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx简单了解">
+<meta property="og:url" content="http://example.com/2023/02/02/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
+<meta property="og:description" content="最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/images/nginx/nginx-01/01.png">
+<meta property="article:published_time" content="2023-02-02T09:22:36.000Z">
+<meta property="article:modified_time" content="2023-02-03T01:43:19.196Z">
 <meta property="article:author" content="jason">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="Nginx">
+<meta property="article:tag" content="Http服务">
+<meta property="article:tag" content="NodeJS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/nginx/nginx-01/01.png">
   
     <link rel="alternative" href="/atom.xml" title="Jason的个人博客" type="application/atom+xml">
   
@@ -204,443 +214,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-nginx/Nginx简单了解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Nginx简单了解
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/02/02/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2023-02-02T09:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-02</time>
+</a> -->
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
       
+        <blockquote>
+<p>最近基于NodeJS实现了一层BFF服务，主要用户数据转换与过滤、安全校验、RPC与服务端调用、跨平台兼容处理。专门用户服务应用端http请求。然而在处理的过程中，虽然Nodejs同样提供了http服务的能力。但随着用户的增长，Node端在处理高并发的处理上显得有一些力不从心，比如：CPU、内存、进程切换、负载均衡处理。</p>
+</blockquote>
+<span id="more"></span>
+
+<p><strong>思考:</strong> 当前Node的BFF层它的核心价值是什么？<br/></p>
+<ul>
+<li>完成应用端多端对接，减轻服务端兼容性处理，降低复杂度；</li>
+<li>基于RPC协议与服务端通信，实现与服务端数据的快速传输；</li>
+<li>完成应用端与服务端之前数据转换、封装、与过滤；</li>
+<li>用户登录鉴权与入口日志收集；</li>
+</ul>
+<p>从架构层面来分析，如果NodeJS同时兼顾BFF层逻辑与高并发处理，工程就会变得异常复杂。你需要的是通过分解来降低它各个层之间的复杂度（复杂度拆解），所以考虑：讲逻辑处理交给Node，高并发以及复杂均衡及http请求操作交给专业的web服务器：nginx。<br><br/></p>
+<h3 id="Nginx了解"><a href="#Nginx了解" class="headerlink" title="Nginx了解"></a>Nginx了解</h3><blockquote>
+<p>Nginx作为当前最流行以及最受欢迎的Http服务器，市场份额已占比全球第一。同时内存占用少，启动极快，高并发能力强的特点，Nginx基于Master主进程，worker子进程相互协助的工作模型，目前在互联网项目中得到广泛使用；</p>
+</blockquote>
+<img src="/images/nginx/nginx-01/01.png" width="800"/>
+
+<h3 id="Nginx正向代理与反向代理"><a href="#Nginx正向代理与反向代理" class="headerlink" title="Nginx正向代理与反向代理"></a>Nginx正向代理与反向代理</h3><ul>
+<li>正向代理：代理的是客户端，如果翻墙VPN；</li>
+<li>反向代理：代理的是服务端；</li>
+</ul>
+<h3 id="Nginx热部署；"><a href="#Nginx热部署；" class="headerlink" title="Nginx热部署；"></a>Nginx热部署；</h3><ul>
+<li>所谓热部署，也可以理解为增量部署，当配置修改后，nginx -s reload重启的方式，并不会中断请求，从而完成配置的更新；</li>
+<li>原理：修改nginx.conf配置后，会新建worker进程来处理new request， 老进程对old request继续处理完成，最终销毁的过程；</li>
+</ul>
+<h3 id="Nginx高并发处理"><a href="#Nginx高并发处理" class="headerlink" title="Nginx高并发处理"></a>Nginx高并发处理</h3><ul>
+<li>1、基于master主进程做主控制，由worker子进程分配主进程压力；</li>
+<li>2、基于epoll模型做非阻塞IO处理，类似于js当中的事件循环；</li>
+</ul>
+<h3 id="Nginx稳定性保证"><a href="#Nginx稳定性保证" class="headerlink" title="Nginx稳定性保证"></a>Nginx稳定性保证</h3><ul>
+<li>基于keepalive用来保证nginx服务的稳定性，keepalive做一个虚拟IP代理底下真实nginx服务器，监测服务器状态来确定稳定性；</li>
+</ul>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><ul>
+<li>nginx.conf</li>
+</ul>
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">
-              <!-- 2023 -->
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
           </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/29/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2023-01-29T15:12:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-29</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/29/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/">new对象fuction与class的一点差异</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/03/study/Arithmetic/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2023-01-03T04:12:32.648Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-03</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/03/study/Arithmetic/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E8%AE%B0%E5%BD%95/">排序算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/02/study/Arithmetic/Tree/108.%20%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2023-01-02T14:35:48.824Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/02/study/Arithmetic/Tree/108.%20%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">108. 将有序数组转换为二叉搜索树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/02/study/Arithmetic/Tree/102.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/" class="archive-article-date">
-  	<time datetime="2023-01-02T14:20:08.040Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/02/study/Arithmetic/Tree/102.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/">102. 二叉树的层序遍历</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Http服务</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/02/02/nginx/Nginx%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/02/study/Arithmetic/Tree/101.%20%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2023-01-02T14:05:23.810Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
+<nav id="article-nav">
+  
+    <a href="/2023/02/02/nodejs/%E8%84%9A%E6%89%8B%E6%9E%B6npm%E5%8F%91%E5%B8%83/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Node脚手架npm发布
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/02/02/study/Arithmetic/String/5.%20%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">5. 最长回文子串</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/02/study/Arithmetic/Tree/101.%20%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/">101. 对称二叉树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E4%BA%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">Nginx了解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">Nginx正向代理与反向代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E7%83%AD%E9%83%A8%E7%BD%B2%EF%BC%9B"><span class="toc-number">3.</span> <span class="toc-text">Nginx热部署；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E9%AB%98%E5%B9%B6%E5%8F%91%E5%A4%84%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">Nginx高并发处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E7%A8%B3%E5%AE%9A%E6%80%A7%E4%BF%9D%E8%AF%81"><span class="toc-number">5.</span> <span class="toc-text">Nginx稳定性保证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">配置文件</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/02/study/Arithmetic/Tree/98.%20%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2023-01-02T13:49:37.822Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/02/study/Arithmetic/Tree/98.%20%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">98. 验证二叉搜索树</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/02/study/Arithmetic/Tree/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" class="archive-article-date">
-  	<time datetime="2023-01-02T13:39:28.832Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/02/study/Arithmetic/Tree/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/">104. 二叉树的最大深度</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/01/study/Arithmetic/Link/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2023-01-01T12:53:51.802Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/01/study/Arithmetic/Link/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/">141. 环形链表</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/01/study/Arithmetic/Link/234.%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2023-01-01T12:48:28.340Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/01/study/Arithmetic/Link/234.%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/">234. 回文链表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/01/study/Arithmetic/Link/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2023-01-01T12:39:17.879Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/01/study/Arithmetic/Link/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">21. 合并两个有序链表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/01/page/2/">2</a><a class="extend next" rel="next" href="/archives/2023/01/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -664,8 +466,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,15 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023/1 | Jason的个人博客</title>
+  <title>手动打造一个自己的脚手架 | Jason的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jason的个人博客">
-<meta property="og:url" content="http://example.com/archives/2023/01/index.html">
+  <meta name="description" content="最近针对后台运营端开发，各个模块相似度较高的特性以及开发过程中冗余代码多、漏删、误删等情况问题的显现，做出来一套类似脚手架的模块化成产工具，基于B&#x2F;S架构，在浏览器端输入对应的路径与参数，再结合已有template模版，针对search、table、detail自动化生成的一套工具。针对B&#x2F;S架构的问题，从拉取代码到运行到配置过程相对较繁琐。考虑用脚手架命令来完成模块的生产；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手动打造一个自己的脚手架">
+<meta property="og:url" content="http://example.com/2023/02/03/nodejs/node_cli/index.html">
 <meta property="og:site_name" content="Jason的个人博客">
+<meta property="og:description" content="最近针对后台运营端开发，各个模块相似度较高的特性以及开发过程中冗余代码多、漏删、误删等情况问题的显现，做出来一套类似脚手架的模块化成产工具，基于B&#x2F;S架构，在浏览器端输入对应的路径与参数，再结合已有template模版，针对search、table、detail自动化生成的一套工具。针对B&#x2F;S架构的问题，从拉取代码到运行到配置过程相对较繁琐。考虑用脚手架命令来完成模块的生产；">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/01.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/02.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/03.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/04.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/05.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/06.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/07.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/08.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/09.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/10.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/11.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/12.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/13.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/14.png">
+<meta property="og:image" content="http://example.com/images/nodejs/node_cli/15.png">
+<meta property="article:published_time" content="2023-02-03T12:10:23.000Z">
+<meta property="article:modified_time" content="2023-02-03T01:43:38.367Z">
 <meta property="article:author" content="jason">
+<meta property="article:tag" content="NodeJS">
+<meta property="article:tag" content="脚手架">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/nodejs/node_cli/01.png">
   
     <link rel="alternative" href="/atom.xml" title="Jason的个人博客" type="application/atom+xml">
   
@@ -204,443 +226,236 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-nodejs/node_cli" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      手动打造一个自己的脚手架
+    </h1>
+  
+
+        
+        <!-- <a href="/2023/02/03/nodejs/node_cli/" class="archive-article-date">
+  	<time datetime="2023-02-03T12:10:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-03</time>
+</a> -->
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
       
+        <blockquote>
+<p>最近针对后台运营端开发，各个模块相似度较高的特性以及开发过程中冗余代码多、漏删、误删等情况问题的显现，做出来一套类似脚手架的模块化成产工具，基于B/S架构，在浏览器端输入对应的路径与参数，再结合已有template模版，针对search、table、detail自动化生成的一套工具。针对B/S架构的问题，从拉取代码到运行到配置过程相对较繁琐。考虑用脚手架命令来完成模块的生产；</p>
+</blockquote>
+<span id="more"></span>
+
+<img src="/images/nodejs/node_cli/01.png"/>  
+
+<h3 id="什么是脚手架？"><a href="#什么是脚手架？" class="headerlink" title="什么是脚手架？"></a>什么是脚手架？</h3><p>简单理解就是：<strong>可通过全局命令实现文件以及文件夹生成的一款工具。</strong></p>
+<h3 id="它包含了什么样的能力，-如何去实现？"><a href="#它包含了什么样的能力，-如何去实现？" class="headerlink" title="它包含了什么样的能力， 如何去实现？"></a>它包含了什么样的能力， 如何去实现？</h3><ul>
+<li><p><strong>全局命令执行的能力；</strong></p>
+<ul>
+<li>初始化工程代码，设置package.json以及bin目录入口文件；<br/><img src="/images/nodejs/node_cli/02.png" width="800"/></li>
+<li>通过npm link生成全局命令；<br>入口文件./bin/cli.js 加入：#! /usr/bin/env node（重点，表示从系统node启动该文件）mycli 就是开始执行./bin/cli.js<br><img src="/images/nodejs/node_cli/03.png" width="800"/><br/><br>在当前工程目录下，执行npm link，创建全局命令mycli。<br/><img src="/images/nodejs/node_cli/04.png" width="800"/></li>
+</ul>
+</li>
+<li><p><strong>用户帮助–help、人机交互的能力（使用：commander包【处理命令相关】，inquirer包【负责人机交互】）；</strong></p>
+<ul>
+<li>初始化–help；<br/><img src="/images/nodejs/node_cli/05.png" width="800"/>
+<img src="/images/nodejs/node_cli/06.png" width="800"/></li>
+<li>创建工程命令生成；<br/><img src="/images/nodejs/node_cli/07.png" width="800"/>
+<img src="/images/nodejs/node_cli/08.png" width="800"/></li>
+<li>人机交互，要用户自己选择对应的模版；<br/><img src="/images/nodejs/node_cli/09.png" width="800"/>
+<img src="/images/nodejs/node_cli/10.png" width="800"/>
+<img src="/images/nodejs/node_cli/11.png" width="800"/></li>
+</ul>
+</li>
+<li><p><strong>代码下载能力（根据第二步人机交互后得到用户的选择参数后，开始通过download-git-repo包对代码进行远程下载）；</strong></p>
+<ul>
+<li>获取参数后，开始下载代码至本地；<br/><img src="/images/nodejs/node_cli/12.png" width="800"/></li>
+</ul>
+</li>
+<li><p><strong>过程提示（逻辑处理中，给用户清晰的展示过程，包含成功和失败提示等，使用ora包）；</strong></p>
+<ul>
+<li>当代码下载过程中，需要给用户提示，这里使用ora包即可做到；<br/><br><img src="/images/nodejs/node_cli/13.png" width="800"/><br/></li>
+<li>注意点：<em>你在nodejs使用CMJ规范引入 ora 时，请使用6.0.0以下版本，以上只支持ESM规范了。</em></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>界面样式处理（针对不同的文字、对颜色、粗细控制等，这里使用chalk包即可）</strong><ul>
+<li>对于页面显示的内容，如何给用户提供更美观的样式，可使用chalk包对文字颜色、是否加粗、斜体等做操作；<br/><img src="/images/nodejs/node_cli/14.png" width="800"/></li>
+<li>结果展示<br/><img src="/images/nodejs/node_cli/15.png" width="800"/></li>
+</ul>
+</li>
+</ul>
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">
-              <!-- 2023 -->
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
           </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/29/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2023-01-29T15:12:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-29</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/29/study/javascript/class%E4%B8%8Efuction%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E8%AE%B0%E5%BD%95/">new对象fuction与class的一点差异</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/03/study/Arithmetic/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2023-01-03T04:12:32.648Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-03</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/03/study/Arithmetic/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E8%AE%B0%E5%BD%95/">排序算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">脚手架</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/02/03/nodejs/node_cli/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/02/study/Arithmetic/Tree/108.%20%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2023-01-02T14:35:48.824Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
+<nav id="article-nav">
+  
+    <a href="/2023/12/17/study/other/http%E5%8D%8F%E8%AE%AE-%E7%BC%93%E5%AD%98%E7%9B%B8%E5%85%B3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          http协议-缓存相关
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/02/03/typescript/ts/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TypeScript小记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/02/study/Arithmetic/Tree/108.%20%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">108. 将有序数组转换为二叉搜索树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%84%9A%E6%89%8B%E6%9E%B6%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是脚手架？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%83%E5%8C%85%E5%90%AB%E4%BA%86%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E8%83%BD%E5%8A%9B%EF%BC%8C-%E5%A6%82%E4%BD%95%E5%8E%BB%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">它包含了什么样的能力， 如何去实现？</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/02/study/Arithmetic/Tree/102.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/" class="archive-article-date">
-  	<time datetime="2023-01-02T14:20:08.040Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/02/study/Arithmetic/Tree/102.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/">102. 二叉树的层序遍历</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/02/study/Arithmetic/Tree/101.%20%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2023-01-02T14:05:23.810Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/02/study/Arithmetic/Tree/101.%20%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/">101. 对称二叉树</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/02/study/Arithmetic/Tree/98.%20%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2023-01-02T13:49:37.822Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/02/study/Arithmetic/Tree/98.%20%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">98. 验证二叉搜索树</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/02/study/Arithmetic/Tree/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" class="archive-article-date">
-  	<time datetime="2023-01-02T13:39:28.832Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-02</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/02/study/Arithmetic/Tree/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/">104. 二叉树的最大深度</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/01/study/Arithmetic/Link/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2023-01-01T12:53:51.802Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/01/study/Arithmetic/Link/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/">141. 环形链表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/01/study/Arithmetic/Link/234.%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2023-01-01T12:48:28.340Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/01/study/Arithmetic/Link/234.%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/">234. 回文链表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!-- <a href="/2023/01/01/study/Arithmetic/Link/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2023-01-01T12:39:17.879Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
-</a> -->
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/01/study/Arithmetic/Link/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">21. 合并两个有序链表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Arithmetic</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/01/page/2/">2</a><a class="extend next" rel="next" href="/archives/2023/01/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -664,8 +479,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
